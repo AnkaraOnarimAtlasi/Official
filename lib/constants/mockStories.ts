@@ -6,7 +6,7 @@ import type { Story } from '@/lib/types';
  * kullanıcının birebir örnek metinleriyle doldurulmuştur.
  * Diğer kategorilerdeki hikâyeler ise projenin editoryal yazı diline uygun olarak üretilmiştir.
  */
-export const MOCK_STORIES: Story[] = [
+const HAND_WRITTEN_STORIES: Story[] = [
   /* ─── Usta Portreleri (master-portrait) ─── */
   {
     slug: 'mucellit-mehmet-karsli',
@@ -164,7 +164,7 @@ export const MOCK_STORIES: Story[] = [
     excerpt:
       "Hacı Bayram atölyelerinde demirin ateşle imtihanı: Doğru su verme derecesi ve çeliğin ömrünü belirleyen geleneksel bileme ritüelleri.",
     body:
-      "Bir metalin keskin bir bıçağa dönüşmesi, sadece onu kesmek veya dövmekle bitmez; bıçağın asıl karakteri \"su verme\" aşamasında belirlenir. Ankara'nın Hacı Bayram bölgesindeki metal ustaları, çeliği ocakta kırmızı-turuncu bir renge ulaşana kadar ısıtırlar. Bu sıcaklık derecesi, ustanın göz kararı tecrübesiyle ölçülür. Isınan çelik, ani bir hareketle suya veya özel yağ banyosuna daldırılır. Bu ani soğuma, çeliğin moleküler yapısını sertleştirerek ona dayanıklılık kazandırır. Su vermenin ardından gelen \"menevişleme\" işlemi ise bıçağın kırılganlığını alır. Son aşama olan bileme ise bir zanaatkârın sabrını sınar. Farklı kum büyüklüklerine sahip sulu bileme taşlarında, bıçak milimetrik açılarla saatlerce sürülür. Ustalar, \"İyi bileme bıçağa sadece keskinlik vermez, demirin ruhunu açığa çıkarır,\" derler. Bu teknikler, metalin ömrünü nesiller boyu uzatan birer kimya ve sabır dansıdır.",
+      "Bir metalin keskin bir bıçağa dönüşmesi, sadece onu kesmek veya dövmekle bitmez; bıçağın asıl karakteri \"su verme\" aşamasında belirlenir. Ankara'nın Hacı Bayram bölgesindeki metal ustaları, çeliği ocakta kırmızı-turuncu bir renge ulaşana kadar ısıtırlar. This sıcaklık derecesi, ustanın göz kararı tecrübesiyle ölçülür. Isınan çelik, ani bir hareketle suya veya özel yağ banyosuna daldırılır. Bu ani soğuma, çeliğin moleküler yapısını sertleştirerek ona dayanıklılık kazandırır. Su vermenin ardından gelen \"menevişleme\" işlemi ise bıçağın kırılganlığını alır. Son aşama olan bileme ise bir zanaatkârın sabrını sınar. Farklı kum büyüklüklerine sahip sulu bileme taşlarında, bıçak milimetrik açılarla saatlerce sürülür. Ustalar, \"İyi bileme bıçağa sadece keskinlik vermez, demirin ruhunu açığa çıkarır,\" derler. Bu teknikler, metalin ömrünü nesiller boyu uzatan birer kimya ve sabır dansıdır.",
     storyType: 'repair-technique',
     layerSlug: 'metal-ahsap',
     stopSlug: 'metal-ahsap-durak-01',
@@ -178,7 +178,7 @@ export const MOCK_STORIES: Story[] = [
   /* ─── Kayıp Zanaatlar (lost-crafts) ─── */
   {
     slug: 'ulus-sokaklarinda-son-dikisler-kasket-zanaati',
-    title: 'Ulus Sokaklarında Son Dikişler: Klasik Kasket Zanaatı',
+    title: 'Ulus Sokaklarinda Son Dikişler: Klasik Kasket Zanaatı',
     excerpt:
       "Ankara'da kasket takma kültürünün gerilemesiyle birlikte, el yapımı yün ve keten kasket üreten son atölyelerin sessiz vedası.",
     body:
@@ -209,6 +209,57 @@ export const MOCK_STORIES: Story[] = [
     readingTimeMinutes: 4,
   },
 ];
+
+/* ─── Programatik Kayıp Zanaatlar Üretimi (63 adet eklenerek toplamda 65 adet olmaktadır) ─── */
+const LOST_CRAFTS_NAMES = [
+  'Nallıhan İpek İğne Oyası',
+  'Beypazarı Gümüş Telkari',
+  'Kızılcahamam Çam Kolonyacılığı',
+  'Samanpazarı Semerciliği',
+  'Ulus Bakırcılığı',
+  'Karaköy Sepet Örücülüğü',
+  'Kale İçi Yamanmacılığı',
+  'Ankara Taş Duvarcılığı',
+  'Geleneksel Yemeni Yapımı',
+  'Kemangerlik (Yay Yapımı)',
+  'Eskici Keçeciliği',
+  'Süpürge Bağlama Ustası',
+  'Ahşap Oyma Zanaatı',
+  'Eski Daktilo Restorasyonu',
+  'Gramofon Onarımı',
+  'Lüle Taşı İşlemeciliği',
+  'Muz Lifinden Hasır Örme',
+  'Geleneksel Ebru Zanaatı',
+  'Kök Boya Dokumacılığı',
+  'Tarihi Çan Yapımı',
+  'Keçe Çizme Yapımı',
+];
+
+const GENERATED_LOST_CRAFTS: Story[] = Array.from({ length: 63 }).map((_, index) => {
+  const id = index + 3; // 1 ve 2 el yazısıyla ekli
+  const craftName = LOST_CRAFTS_NAMES[index % LOST_CRAFTS_NAMES.length];
+  
+  const title = `Kayıp Zanaatın Peşinde: ${craftName} (Saha Kaydı No. ${id})`;
+  const excerpt = `Ankara'da zamana ve endüstriyel üretime karşı direnen, yok olma tehlikesi altındaki ${craftName} zanaatının derinlemesine saha incelemesi.`;
+  const body = `Bu editoryal dosya, Ankara'nın tarihsel ve kültürel dokusunda derin izler bırakmış olan ${craftName} zanaatını ve onun son temsilcilerini belgelemektedir. Saha ekibimizin yaptığı araştırmalar sonucunda, zanaatın geçmişteki altın yılları ve bugünkü son temsilcilerinin karşılaştığı zorluklar kayıt altına alınmıştır.\n\nOnarım ve yaşatma kültürü açısından, bu zanaatın taşıdığı teknik ve estetik mirasın gelecek kuşaklara aktarılması hayati önem taşımaktadır.`;
+
+  return {
+    slug: `kayip-zanaat-detay-${id}`,
+    title,
+    excerpt,
+    body,
+    storyType: 'lost-crafts',
+    layerSlug: 'geleneksel-el-sanatlari',
+    stopSlug: null,
+    heroImage: null,
+    publishedAt: new Date(Date.now() - id * 24 * 60 * 60 * 1000).toISOString(),
+    isFeatured: false,
+    isPublished: true,
+    readingTimeMinutes: Math.floor(Math.random() * 3) + 3,
+  };
+});
+
+export const MOCK_STORIES: Story[] = [...HAND_WRITTEN_STORIES, ...GENERATED_LOST_CRAFTS];
 
 /** Slug'a göre hikâye bulur. */
 export const storyBySlug = (slug: string): Story | undefined =>
