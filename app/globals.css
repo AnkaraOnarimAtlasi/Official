@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Handcaps — el yazısı başlık fontu (Rahagita Studio · kişisel kullanım lisansı) */
+@font-face {
+  font-family: 'Handcaps';
+  src: url('/fonts/Handcaps-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Indie Flower — doodle gövde fontu (Kimberly Geswein · OFL · Türkçe tam destek) */
+/* next/font/google ile yüklenir, ayrıca @font-face gerekmez */
+
+
+/*
+ * Ankara Onarım Atlası — Design Tokens
+ * Renkler fiziksel atlasın paftalarından çekildi:
+ *   01 Kağıt Sanatı (mor), 02 Nesneyi Onaranlar (sepia),
+ *   03 Geleneksel El Sanatları (indigo), 04 Metal-Ahşap (terracotta),
+ *   05 Hafızayı Onaranlar (firuze).
+ * Paftalar krem kâğıt üzerine sulu boya/mürekkep işidir; bu doku
+ * uygulamada hafif paper grain ile yeniden üretilir.
+ */
+@property --atlas-red-deep {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #5c3b8e;
+}
+
+@property --atlas-accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #5c3b8e;
+}
+
+:root {
+  /*
+   * Yüzeyler — galeri/müze beyazı sistemi.
+   * Krem yerine soğuk-beyaz; pafta renkleri (mor/sepia/indigo/terracotta)
+   * tek tek aksanlar olarak öne çıkar. Beyaz dominanttır;
+   * yumuşak gri tonları yalnızca tonal kontrast için kullanılır.
+   */
+  --atlas-paper: rgba(250,250,247,0.68);       /* gallery off-white — şeffaf, gradyan belirgin */
+  --atlas-paper-light: rgba(255,255,255,0.72); /* saf beyaz — kart yüzeyi */
+  --atlas-paper-deep: rgba(241,239,233,0.65);  /* yumuşak gri-bej — bölüm ayrımı */
+
+  /* Mürekkep ve metin */
+  --atlas-ink: #141414;           /* neredeyse saf siyah — galeri etiketi */
+  --atlas-soft: #2a2a2a;
+  --atlas-muted: #6b6b68;
+
+  /* Çerçeve / ayraç */
+  --atlas-border: rgba(20, 20, 20, 0.10);
+  --atlas-border-strong: rgba(20, 20, 20, 0.28);
+
+  /* Katman renkleri (fiziksel paftalardan örneklendi) */
+  --layer-paper-arts: #5c3b8e;        /* Mor — Kağıt Sanatı */
+  --layer-paper-arts-soft: #8a6ab6;
+  --layer-object-repair: #8a4a1f;     /* Sepia — Nesneyi Onaranlar */
+  --layer-object-repair-soft: #b87a47;
+  --layer-traditional-crafts: #1a3f8f;/* İndigo — Geleneksel El Sanatları */
+  --layer-traditional-crafts-soft: #4969b9;
+  --layer-metal-wood: #b85a1c;        /* Terracotta — Metal-Ahşap */
+  --layer-metal-wood-soft: #d68a4a;
+  --layer-memory-repair: #1a6b5c;     /* Derin firuze — Hafızayı Onaranlar */
+  --layer-memory-repair-soft: #3a9b8a;
+
+  /*
+   * Editoryal aksan — varsayılan olarak Kağıt Sanatı (mor).
+   * Hero scroll'unda aktif paftanın rengiyle güncellenir.
+   */
+  --atlas-red-deep: #5c3b8e;
+  --atlas-accent: #5c3b8e;
+
+  /* Tipografi (fallback'ler; next/font ile override edilir) */
+  --font-display: 'Fraunces Fallback', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-hand: 'Caveat Fallback', 'Comic Sans MS', cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dijital atlas her zaman aydınlık kağıt yüzeyi olarak tasarlandı;
+     karanlık mod baskı estetiğini bozar. İleride opsiyonel "gece arşivi"
+     katmanı eklenebilir — bu sürümde light tema sabittir. */
+}
+
+* {
+  border-color: var(--atlas-border);
+}
+
+html, body {
+  transition: --atlas-red-deep 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              --atlas-accent 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  /* Poppins ile --font-display override — başlıklar Poppins */
+  --font-display: var(--font-poppins), sans-serif !important;
+  /* Patrick Hand ile --font-sans override — alt metinler Patrick Hand (Türkçe destekli) */
+  --font-sans: var(--font-patrick), cursive !important;
+  /* Patrick Hand ile --font-hand override — el yazıları da Patrick Hand */
+  --font-hand: var(--font-patrick), cursive !important;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  /* Gradient için zemin beyazı — blob'lar bu üzerine çizer */
+  background-color: #fafaf7;
+}
+
+body {
+  background-color: transparent;
+  color: var(--atlas-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'cv11';
+  min-height: 100dvh;
+  /* Indie Flower tek ağırlıklı — hafif stroke ile kalınlaştır */
+  -webkit-text-stroke: 0.4px currentColor;
+}
+
+/* Kağıt grain — düşük etkili, tekrar eden noise; mobilde otomatik olarak
+   reduced motion / hıza saygı duyar (statik). */
+.paper-grain {
+  position: relative;
+  isolation: isolate;
+}
+.paper-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(rgba(20, 20, 20, 0.035) 1px, transparent 1px),
+    radial-gradient(rgba(20, 20, 20, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+}
+.paper-grain > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* İnce vinyet — sahife kenarlarına editoryal sıcaklık */
+.paper-vignette {
+  background:
+    radial-gradient(120% 90% at 50% 0%, transparent 60%, rgba(20, 20, 20, 0.035) 100%);
+}
+
+/* ── Bölümler arası yumuşak gradyan geçişleri ──────────────────────────── */
+
+/*
+ * Her section'ın üst ve alt kenarına gradient solma ekler.
+ * Bu, sert section sınırlarını yumuşatır ve arka plan gradyanının
+ * sectionlar arasında akmasına izin verir.
+ */
+main > section,
+main > div > section {
+  position: relative;
+}
+
+/* Üstten yumuşak giriş */
+main > section::before,
+main > div > section::before {
+  content: '';
+  position: absolute;
+  inset-x: 0;
+  top: 0;
+  height: 72px;
+  background: linear-gradient(
+    to bottom,
+    rgba(250, 250, 247, 0) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Alttan yumuşak çıkış */
+main > section::after,
+main > div > section::after {
+  content: '';
+  position: absolute;
+  inset-x: 0;
+  bottom: 0;
+  height: 72px;
+  background: linear-gradient(
+    to top,
+    rgba(250, 250, 247, 0) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Tüm section border'larını yumuşat */
+section {
+  border-color: rgba(20,20,20,0.07) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────── */
+
+/* Editoryal başlıklar */
+.display-1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  -webkit-text-stroke: 0px transparent !important;
+}
+.display-2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  line-height: 1.05;
+  -webkit-text-stroke: 0px transparent !important;
+}
+
+/* Arşiv etiketi — küçük, geniş aralıklı kapital */
+.archive-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+/* Saha notu — kullanıcının paftalardaki el yazısı estetiğine selam */
+.hand-note {
+  font-family: var(--font-hand);
+  font-weight: 500;
+}
+
+/* Focus ring — kâğıt üstünde, ince ve net */
+:where(a, button, [role='button'], input, textarea, select):focus-visible {
+  outline: 2px solid var(--atlas-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Smooth scroll, prefers-reduced-motion ile kapanır */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Seçim rengi — aktif pafta rengi */
+::selection {
+  background-color: var(--atlas-accent);
+  color: var(--atlas-paper-light);
+}
+
+/* Yardımcı utility — kâğıt levha */
+.sheet {
+  background-color: var(--atlas-paper-light);
+  box-shadow: var(--tw-shadow, 0 18px 36px -24px rgba(20, 20, 20, 0.25));
+  border: 1px solid var(--atlas-border);
+}
+
+/* --- GEZGİN KEÇİ MASCOT --- */
+#gezgin-keci {
+  position: fixed;
+  width: 120px;
+  z-index: 9999;
+  pointer-events: none;
+  transition: left 5s linear, top 5s linear; 
+}
+
+/* İç Taşıyıcı (Animasyon için) */
+.keci-govdesi {
+  transform-origin: bottom center;
+}
+
+/* --- ANİMASYON DURUMLARI --- */
+
+/* 1. Yavaş Yalpalama Animasyonu */
+.yuruyor .keci-govdesi {
+  animation: yavas-pitir 0.8s infinite linear;
+}
+
+@keyframes yavas-pitir {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* 2. Çimen Çiğneme Animasyonu */
+.duruyor .grass {
+  transform-origin: 255px 385px; 
+  animation: chew 0.3s infinite alternate ease-in-out;
+}
+
+@keyframes chew {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(15deg); }
+}
+
+/* Yön döndürme */
+.saga-bak { transform: scaleX(-1); }
+.sola-bak { transform: scaleX(1); }
+
+/* --- ÖZEL İMLEÇ ALTYAPISI --- */
+@media (hover: hover) and (pointer: fine) {
+  body, 
+  button, 
+  a, 
+  input, 
+  textarea, 
+  select, 
+  [role="button"], 
+  [type="button"], 
+  [type="submit"] {
+    cursor: none !important;
+  }
+}
+
+.poppins-title {
+  font-family: var(--font-poppins), sans-serif !important;
+  font-weight: 800 !important;
+  -webkit-text-stroke: 0px transparent !important;
+}
+
+.hero-description {
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  font-weight: 300 !important;
+  -webkit-text-stroke: 0px transparent !important;
+  opacity: 0.85;
+}
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekiç İmleç ve Doodle Tıklama</title>
+    <style>
+        /* === 1. GENEL SAYFA AYARLARI === */
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #f0f0f5; /* Hafif gri arkaplan */
+            /* KRİTİK: Orijinal fare imlecini sitenin tamamında gizle */
+            cursor: none; 
+            overflow: hidden;
+            font-family: sans-serif;
+            user-select: none; /* Sayfadaki yazıların seçilmesini engeller, çekiç daha iyi çalışır */
+        }
+
+        /* Test amaçlı örnek içerik */
+        .test-icerik {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            color: #333;
+        }
+
+        /* === 2. ÖZEL ÇEKİÇ İMLEÇ AYARLARI === */
+        #cekic-cursor {
+            position: fixed;
+            width: 40px; /* Çekiç boyutu */
+            height: 40px;
+            pointer-events: none; /* Çekicin kendisi tıklamaları engellemesin, alttaki elementler tıklanabilsin */
+            z-index: 10000; /* Her şeyin üstünde olsun */
+            opacity: 0; /* Fare hareket etmeden önce gizli kalsın */
+            
+            /* KRİTİK: Çekicin sapından (sağ alt) tutuyormuş gibi döndürme noktası ayarladık */
+            transform-origin: 100% 100%; 
+            
+            /* Hafif bir takip yumuşatması */
+            transition: transform 0.08s ease-in-out;
+        }
+
+        /* Tıklama Anı Animasyonu (Çekiç Vuruyor) */
+        #cekic-cursor.vurdu {
+            /* Çekici eğerek vurma efekti ver (-35 derece) */
+            transform: rotate(-35deg);
+        }
+
+        /* === 3. DOODLE TIKLAMA EFEKTLERİ === */
+        .click-effect {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 80px;
+            height: 80px;
+            /* KRİTİK: Efektin tam tıklanan koordinatın ortasında çıkmasını sağlar */
+            transform: translate(-50%, -50%);
+        }
+
+        .doodle-spark {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            /* Doodle Efekt SVG'si (Siyah Çizgiler) - Tıklanan noktadan dışarı patlar */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g stroke="%23333" stroke-width="4" fill="none" stroke-linecap="round"><path d="M50,25 L50,5 M50,75 L50,95 M25,50 L5,50 M75,50 L95,50 M32,32 L15,15 M68,68 L85,85 M32,68 L15,85 M68,32 L85,15"/></g></svg>');
+            
+            /* Efekt Animasyonu (Çakıp Sönme) */
+            animation: sparks-bum 0.3s ease-out forwards;
+        }
+
+        @keyframes sparks-bum {
+            0% { transform: scale(0.3); opacity: 1; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="test-icerik">
+        <h1>Çekiç İmleç Hazır!</h1>
+        <p>Fareni hareket ettir ve ekranda herhangi bir yere tıkla.</p>
+    </div>
+
+    <div id="cekic-cursor">
+        <svg fill="#000000" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+             viewBox="0 0 32 32" xml:space="preserve">
+            <g>
+                <path d="M6.6,19.8c-0.3,0-0.5-0.1-0.7-0.3l-3.7-3.7c-0.2-0.2-0.3-0.4-0.3-0.7s0.1-0.5,0.3-0.7l1.5-1.5c0.3-0.3,0.7-0.4,1-0.2
+                    l0.8,0.3l0.6-0.6c-0.1-1,0.2-2.1,1-2.9l4.2-4.2c1.7-1.7,4-2.7,6.5-2.8l0.4,0c0.4,0,0.8,0.2,0.9,0.6s0.1,0.8-0.2,1.1l-0.5,0.5
+                    c-1.3,1.3-2,3.1-1.7,4.9c0,0.3-0.1,0.6-0.3,0.8l-4.2,4.2c-0.8,0.8-1.8,1.1-2.9,1l-0.6,0.6L9,17c0.1,0.4,0,0.7-0.2,1l-1.5,1.5
+                    C7.1,19.7,6.9,19.8,6.6,19.8z"/>
+            </g>
+            <path d="M28.8,22.4L17.6,12.1l-3.9,3.9c-0.1,0.1-0.1,0.1-0.2,0.2l10.4,11.3c0.7,0.7,1.5,1.1,2.5,1.1c0,0,0.1,0,0.1,0
+                c0.9,0,1.8-0.4,2.5-1c0.7-0.7,1-1.6,1-2.6C29.9,24,29.5,23.1,28.8,22.4z"/>
+        </svg>
+    </div>
+
+    <script>
+        const body = document.body;
+        const cekic = document.getElementById('cekic-cursor');
+
+        // === 1. Takip Mantığı ===
+        document.addEventListener('mousemove', (e) => {
+            // Fare hareket edince çekici göster
+            cekic.style.opacity = 1;
+            
+            // KRİTİK HİZALAMA: Senin SVG'de çekicin vuran kısmı sol üstte.
+            // Fare ucunun o vuran kısma gelmesi için çekici X ve Y ekseninde -10px kaydırdık.
+            cekic.style.left = (e.clientX - 10) + 'px';
+            cekic.style.top = (e.clientY - 10) + 'px';
+        });
+
+        // === 2. Vurma Mantığı (mousedown/mouseup) ===
+        document.addEventListener('mousedown', () => {
+            cekic.classList.add('vurdu'); // Çekici -35 derece döndür
+        });
+
+        document.addEventListener('mouseup', () => {
+            cekic.classList.remove('vurdu'); // Çekici eski haline kaldır
+        });
+
+        // === 3. Doodle Tıklama Efekti Mantığı (click) ===
+        document.addEventListener('click', (e) => {
+            createDoodleSpark(e.clientX, e.clientY);
+        });
+
+        function createDoodleSpark(x, y) {
+            // Efekt kapsayıcısını oluştur
+            const container = document.createElement('div');
+            container.className = 'click-effect';
+            container.style.left = x + 'px';
+            container.style.top = y + 'px';
+
+            // İçine doodle kıvılcım elementini koy
+            const spark = document.createElement('div');
+            spark.className = 'doodle-spark';
+            
+            container.appendChild(spark);
+            body.appendChild(container);
+
+            // Animasyon bittikten sonra (0.3s) elementi DOM'dan kaldır (temizlik)
+            setTimeout(() => {
+                container.remove();
+            }, 300);
+        }
+
+    </script>
+</body>
+</html>

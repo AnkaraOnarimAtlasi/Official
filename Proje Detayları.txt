@@ -1,0 +1,766 @@
+# ANKARA ONARIM ATLASI
+
+## Geliştirmeye Açık Proje Ana Çerçevesi
+
+## 1. Proje Kimliği
+
+**Proje Adı:** Ankara Onarım Atlası
+**Proje Türü:** Görsel iletişim tasarımı, kent araştırması, kültürel haritalama ve deneyim tasarımı projesi
+**Proje Sahipleri:** Pelin Çetintaş ve Pınar Eke
+**Başlangıç Tarihi:** Nisan 2026
+**Odak Kent:** Ankara
+**Ana Hedef Kitle:** 18–25 yaş arası genç kullanıcılar
+**Temel Çıktı Yapısı:** Fiziksel atlas + dijital keşif ve rota sistemi
+
+Ankara Onarım Atlası, Ankara’da gündelik yaşamın içinde varlığını sürdüren ancak çoğu zaman görünmeyen niş onarım, bakım, koruma ve zanaat ağlarını belgeleyen; bu ağları genç kullanıcıların keşfedebileceği katmanlı bir kent deneyimine dönüştüren bir tasarım projesidir.
+
+Proje, Ankara’yı yalnızca yeni yapılar, tüketim merkezleri, popüler mekânlar ve turistik simgeler üzerinden anlatmaz. Bunun yerine şehirde sessizce devam eden tamir, bakım, restorasyon, yeniden kullanım ve kültürel koruma pratiklerini görünür kılar.
+
+---
+
+## 2. Projenin Tek Cümlelik Tanımı
+
+**Ankara Onarım Atlası, Ankara’daki görünmeyen niş onarım ve zanaat ağlarını katmanlı rotalar, fiziksel atlaslar ve dijital keşif araçları aracılığıyla görünür kılan; genç kullanıcıyı tüketiciden aktif kent operatörüne dönüştürmeyi amaçlayan bir kent hafızası projesidir.**
+
+---
+
+## 3. Projenin Manifestosu
+
+# Şehir sadece inşa edilen değil, onarılarak sürdürülen bir sistemdir.
+
+Bir şehir yalnızca yeni binalardan, büyük caddelerden, kafelerden, alışveriş merkezlerinden veya modern yüzeylerden oluşmaz. Şehrin devamlılığını sağlayan görünmez bir emek vardır: bozulanı onaran, yıprananı iyileştiren, unutulanı koruyan, nesneleri ve hikâyeleri hayatta tutan insanlar.
+
+Ankara Onarım Atlası, şehrin bu görünmeyen damarlarını ortaya çıkarmayı amaçlar.
+
+Bu atlas için onarım yalnızca kırılan bir nesneyi tamir etmek değildir. Onarım aynı zamanda:
+
+* Bir saatin yeniden çalışmasını sağlamak,
+* Eski bir kitabın sayfalarını korumak,
+* Bir plağın sesini yaşatmak,
+* Ahşap bir parçanın dokusunu sürdürmek,
+* Analog bir kameranın hafızasını devam ettirmek,
+* Bir ustanın bilgisini yeni kuşaklarla buluşturmak,
+* Kentin unutulmaya başlayan kültürel belleğini yeniden görünür kılmaktır.
+
+Bu nedenle Ankara Onarım Atlası, yalnızca bir harita değil; şehrin bakım kültürünü belgeleyen, kullanıcıyı keşfe çağıran ve gündelik tüketim alışkanlıklarını sorgulatan yaşayan bir sistemdir.
+
+---
+
+## 4. Projenin Çıkış Problemi
+
+### 4.1. Kentsel ve Algısal Kopuş
+
+Ankara, özellikle genç kullanıcıların gözünde çoğu zaman planlı yapıları, merkezi bölgeleri, kafeleri, üniversite çevreleri ve modern kent yüzeyi üzerinden algılanır. Fakat bu görünür yüzeyin arkasında şehrin çok daha eski, çok daha kırılgan ve çok daha değerli bir katmanı bulunmaktadır: küçük atölyeler, ustalar, tamirciler, restorasyon işleri ve geleneksel üretim bilgileri.
+
+Bu ağlar şehirde yaşamaya devam etse de gençlerin gündelik rotasında çoğunlukla görünmezdir.
+
+Birçok genç:
+
+* Eski bir plağın nerede iyileştirilebileceğini,
+* Analog bir kameranın kim tarafından onarılabileceğini,
+* Bir kitabın nasıl restore edildiğini,
+* Bir ahşap nesnenin nasıl korunduğunu,
+* Bir saatin veya daktilonun hangi ustalık bilgisiyle yaşatıldığını
+
+bilmemektedir.
+
+Bu durum yalnızca mekânsal bir uzaklık değil, aynı zamanda kültürel ve algısal bir kopuştur.
+
+### 4.2. Seri Üretim ve Kimliksizleşme
+
+Günümüzde nesneler hızla satın alınmakta, kullanılmakta ve bozulduğunda kolayca yenisiyle değiştirilmektedir. Seri üretim kültürü, kullanıcıyı kendi nesnelerine bağlanan, onları tanıyan ve koruyan bir birey olmaktan çıkarıp sürekli yeni ürün tüketen pasif bir alıcıya dönüştürmektedir.
+
+Bu kültürün sonucunda:
+
+* Nesnelerin hikâyesi kaybolur,
+* Kişisel bağ azalır,
+* Eşyaların ömrü kısalır,
+* Kullanıcının kendine özgü dünyası giderek tek tipleşir.
+
+Ankara Onarım Atlası, onarımı yalnızca ekonomik bir tercih olarak değil, nesneyle yeniden bağ kurmanın ve biricikliğini korumanın bir yolu olarak konumlandırır.
+
+### 4.3. Ekolojik ve Teknik Atalet
+
+Sürdürülebilirlik gençler için giderek daha önemli bir değer hâline gelmektedir. Buna rağmen birçok kullanıcı, sürdürülebilir davranışın günlük hayatta nasıl uygulanacağını bilmemektedir.
+
+“Bozulunca at” anlayışı yalnızca çevresel atık üretmez; aynı zamanda teknik bilginin, el emeğinin ve kültürel hafızanın kaybolmasına da neden olur.
+
+Problem şudur:
+
+**Genç kullanıcı onarmanın önemli olduğunu hisseder, ancak nereden başlayacağını, kime ulaşacağını ve hangi nesnenin nasıl yaşatılabileceğini bilmez.**
+
+Ankara Onarım Atlası bu boşluğu doldurur. Kullanıcıya soyut bir sürdürülebilirlik mesajı değil; şehir içinde uygulanabilir, ziyaret edilebilir ve deneyimlenebilir bir müdahale rehberi sunar.
+
+---
+
+## 5. Temel İçgörü
+
+Genç kullanıcılar yalnızca “daha az tüket” şeklinde didaktik bir mesajla harekete geçmez. Onların ilgisini çekebilmek için onarımın:
+
+* Estetik,
+* Keşfedilebilir,
+* Paylaşılabilir,
+* Kendine özgü,
+* Şehirle bağ kurduran,
+* Hikâye taşıyan
+
+bir deneyim hâline gelmesi gerekir.
+
+Bu nedenle proje, onarımı nostaljik veya eskiye ait bir alışkanlık olarak değil; günümüz gençlerinin etik, estetik ve kültürel değerleriyle örtüşen yeni bir kent deneyimi olarak ele alır.
+
+Projenin temel dönüşüm vaadi şudur:
+
+**Kullanıcı, bozulan bir nesnenin yalnızca tüketicisi değil; onun hikâyesini sürdüren, ustayla temas kuran ve kentin görünmeyen bakım sistemine katılan aktif bir operatöre dönüşür.**
+
+---
+
+## 6. Projenin Amacı
+
+Ankara Onarım Atlası’nın temel amacı, Ankara’daki niş onarım ağlarını bir müdahale ve keşif rehberine dönüştürmektir.
+
+Bu amaç dört ana eksende gelişir:
+
+### 6.1. Alternatif Kent Okuması
+
+Ankara’yı yalnızca yeni yapılanlar, popüler tüketim alanları ve standart kent rotaları üzerinden değil; tamir edilen, iyileştirilen, korunan ve yaşatılan nesneler üzerinden yeniden okutmak.
+
+Bu yaklaşım, kullanıcının şehre bakışını değiştirir. Ankara artık yalnızca gezilecek bir yer değil; okunacak, keşfedilecek ve içinde müdahale edilecek yaşayan bir organizmaya dönüşür.
+
+### 6.2. Niş Küratörlük
+
+Projenin amacı her tamirciyi listeleyen genel bir servis rehberi oluşturmak değildir.
+
+Odak noktası:
+
+* Özel uzmanlık gerektiren,
+* Kaybolma riski taşıyan,
+* Hikâyesi olan,
+* Zanaat bilgisi barındıran,
+* Kent belleğiyle ilişki kurabilen
+
+onarım ve koruma pratikleridir.
+
+Bu nedenle atlas, nicelikten çok küratöryel seçkiye dayanır.
+
+### 6.3. Nesiller Arası Temas
+
+Proje, genç kullanıcılarla ustalar arasında yeni bir temas alanı yaratır.
+
+Ustalar yalnızca hizmet sağlayıcı olarak değil; teknik bilgi, kent hafızası ve el emeği taşıyan kültürel aktörler olarak görünür kılınır.
+
+Genç kullanıcı ise yalnızca müşteri değil; dinleyen, öğrenen, belgeleyen ve bu bilginin sürdürülmesine katkı sağlayan bir ziyaretçiye dönüşür.
+
+### 6.4. Kentsel Aktivasyon
+
+Atlas, kullanıcıyı pasif biçimde bilgi tüketmeye değil, hareket etmeye çağırır.
+
+Kullanıcı:
+
+* Bir rota seçer,
+* Şehir içinde yürür veya ulaşım sağlar,
+* Ustalara ulaşır,
+* Nesnelerin hikâyelerini öğrenir,
+* Yeni noktalar keşfeder,
+* Sisteme katkı sunar.
+
+Böylece proje yalnızca anlatan değil, kullanıcıyı kentin görünmeyen sürdürülebilirlik sistemine dahil eden bir deneyime dönüşür.
+
+---
+
+## 7. Hedef Kitle
+
+### 7.1. Birincil Hedef Kitle: 18–25 Yaş Genç Kullanıcılar
+
+Projenin ana hedef kitlesi, Ankara’da yaşayan veya Ankara’yı deneyimleyen gençlerdir.
+
+Bu kullanıcılar:
+
+* Yeni keşif rotalarına ilgi duyan,
+* Kültür, tasarım, sürdürülebilirlik ve şehir yaşamıyla ilişki kuran,
+* Standart tüketim kültüründen yorulan,
+* Kendisini farklılaştıracak deneyimler arayan,
+* Dijital platformları gündelik olarak kullanan,
+* Görsel olarak güçlü ve paylaşılabilir içeriklere açık
+
+bir profildir.
+
+Atlas, bu kullanıcı için “tamirci rehberi” olarak değil; farklı bir Ankara deneyimi, kültürel keşif aracı ve etik tüketim biçimi olarak konumlanmalıdır.
+
+### 7.2. İkincil Hedef Kitleler
+
+Projenin gelişim sürecinde şu kullanıcı grupları da sisteme dahil olabilir:
+
+* Tasarım, sanat, mimarlık ve kültürel miras alanlarında çalışan öğrenciler,
+* Ankara’da alternatif rota arayan ziyaretçiler,
+* Koleksiyonerler ve analog kültüre ilgi duyan kişiler,
+* Kent araştırmacıları,
+* Sürdürülebilir yaşam toplulukları,
+* Kültür kurumları,
+* Projede yer alan ustalar ve atölyeler.
+
+---
+
+## 8. Kullanıcıya Sunulan Değer
+
+Ankara Onarım Atlası kullanıcıya dört temel değer sunar:
+
+### Keşif Değeri
+
+Kullanıcının daha önce fark etmediği sokakları, dükkânları, ustaları ve onarım pratiklerini keşfetmesini sağlar.
+
+### Kültürel Değer
+
+Ankara’nın görünmeyen zanaat ve bakım hafızasını görünür kılar.
+
+### Etik Değer
+
+Atmak yerine yaşatmayı, tüketmek yerine korumayı teşvik eder.
+
+### Kişisel Değer
+
+Kullanıcının kendi nesneleriyle, kendi şehriyle ve kendi gündelik alışkanlıklarıyla daha anlamlı bir bağ kurmasını sağlar.
+
+---
+
+## 9. Projede “Onarım” Kavramının Kapsamı
+
+Bu projede onarım, yalnızca işlevini kaybetmiş bir nesnenin yeniden çalıştırılması değildir.
+
+Onarım beş farklı anlam katmanında ele alınır:
+
+### Teknik Onarım
+
+Saat, kamera, pikap, daktilo veya mekanik araçların yeniden çalışır hâle getirilmesi.
+
+### Malzeme Onarımı
+
+Ahşap, deri, kumaş, kâğıt veya benzeri malzemelerin korunması, iyileştirilmesi ve ömrünün uzatılması.
+
+### Hafıza Onarımı
+
+Kitap, arşiv, efemera, plak veya aile yadigârı nesnelerin taşıdığı hikâyelerin korunması.
+
+### Kültürel Onarım
+
+Kaybolma riski taşıyan zanaat bilgilerinin ve usta pratiklerinin belgelenmesi.
+
+### Kentsel Onarım
+
+Genç kullanıcı ile şehrin görünmeyen üretim ve bakım ağları arasında kopmuş olan bağın yeniden kurulması.
+
+Bu geniş anlam yapısı, projeyi sıradan bir hizmet rehberinden ayırır.
+
+---
+
+## 10. Küratöryel Seçim İlkeleri
+
+Atlas içinde yer alacak atölye, usta veya onarım noktaları rastgele seçilmemelidir. Projenin güvenilirliğini ve karakterini korumak için her durak belirli kriterlerle değerlendirilmelidir.
+
+Bir noktanın atlasa dahil edilebilmesi için şu özelliklerin en az birkaçını taşıması beklenir:
+
+* Ankara ile güçlü bir mekânsal veya kültürel bağ kurması,
+* Özel bir teknik bilgi veya zanaat pratiği taşıması,
+* Seri üretim dışı bir değer üretmesi,
+* Nesne yaşamını uzatması veya hafıza korumasına katkı sağlaması,
+* Kullanıcı tarafından ziyaret edilebilir veya belgelenebilir olması,
+* Hikâyesinin görsel ve metinsel olarak aktarılabilir olması,
+* Ustanın veya işletmenin projede görünür olmayı kabul etmesi,
+* Bilginin doğrulanabilir olması.
+
+Bu sistem, projenin zaman içinde büyürken sıradan bir işletme listesinin içine dönüşmesini engeller.
+
+---
+
+## 11. Mevcut Beş Katmanlı Atlas Sistemi
+
+Sunum dosyasında proje beş ana katman üzerinden yapılandırılmıştır. Bu katmanlar, Ankara’nın farklı onarım biçimlerini farklı duyusal ve kültürel temalar üzerinden ele alır.
+
+### 11.1. Mavi Katman: Analog Optik ve Mercek Hafızası
+
+**Temel Tema:** Ankara’nın ışıkla kurduğu bağ
+**Örnek Bölgeler:** Ulus, Kızılay
+**Örnek Pratikler:**
+
+* Analog kamera mekanizmaları,
+* Lens restorasyonu,
+* Diyoptri ayarları,
+* Eski fotoğraf ekipmanlarının bakımı,
+* Görsel hafızayı taşıyan teknik nesnelerin korunması.
+
+Bu katman, şehrin görüntü üretme ve hatırlama biçimlerini temsil eder.
+
+### 11.2. Kırmızı Katman: Mekanik ve Zamanın Ritmi
+
+**Temel Tema:** Şehrin tıkırtısı ve mekanik zamanı
+**Örnek Bölgeler:** Samanpazarı, Ulus
+**Örnek Pratikler:**
+
+* Saat dişlisi onarımı,
+* Daktilo şaryo tamiri,
+* Mikro-mekanik müdahaleler,
+* Küçük mekanik sistemlerin yeniden işler hâle getirilmesi.
+
+Bu katman, şehirde zamanın ve hareketin küçük mekanizmalar aracılığıyla nasıl sürdürüldüğünü görünür kılar.
+
+### 11.3. Sarı Katman: Ses ve Rezonans
+
+**Temel Tema:** Ankara’nın tınısı
+**Örnek Bölgeler:** Ulus, Ayrancı
+**Örnek Pratikler:**
+
+* Pikap iğne kalibrasyonu,
+* Plak kondisyon iyileştirme,
+* Lambalı amfi devreleri,
+* Analog ses ekipmanlarının bakımı ve korunması.
+
+Bu katman, sesin, müziğin ve analog dinleme kültürünün şehir belleğindeki yerini ele alır.
+
+### 11.4. Yeşil Katman: Organik ve Hammadde
+
+**Temel Tema:** Şehrin dokusu
+**Örnek Bölgeler:** Altındağ, Siteler
+**Örnek Pratikler:**
+
+* Ahşap konservasyonu,
+* Deri onarımı,
+* Geleneksel dokuma ihyası,
+* Kemangerlik ve ok onarımı,
+* Doğal malzeme ile çalışan ustalık pratikleri.
+
+Bu katman, şehrin dokunulabilir malzeme hafızasını temsil eder.
+
+### 11.5. Siyah Katman: Hafıza Restorasyonu
+
+**Temel Tema:** Şehrin belleği
+**Örnek Bölgeler:** Adil Han, Kale çevresi
+**Örnek Pratikler:**
+
+* Mücellitlik,
+* Kitap onarımı,
+* Aile arşivi restorasyonu,
+* Kentsel efemera koruma,
+* Belgelerin ve kişisel hafıza nesnelerinin yaşatılması.
+
+Bu katman, onarımın en doğrudan biçimde geçmişi geleceğe taşıyan yönünü temsil eder.
+
+---
+
+## 12. Katman Sisteminin Gelecekte Geliştirilmesi
+
+Beşli katman sistemi projenin güçlü bir başlangıç omurgasıdır; ancak proje saha araştırmasıyla büyüdükçe bu yapının esnek kalması gerekir.
+
+Daha sonra çalışılan **Metal–Ahşap** rotası gibi odaklar, aşağıdaki biçimlerde sisteme dahil edilebilir:
+
+* Yeşil Katman’ın içinde özel bir alt rota olarak,
+* Ayrı bir malzeme temelli koleksiyon olarak,
+* Mevsimsel veya dönemsel rota serisi olarak,
+* Usta portreleriyle birleşen özel içerik dosyası olarak,
+* Web sitesinde keşfedilebilir bir tema etiketi olarak.
+
+Bu noktada temel karar şudur:
+
+**Atlas yalnızca sabit beş haritadan mı oluşacak, yoksa zaman içinde yeni rotalarla büyüyen canlı bir sistem mi olacak?**
+
+Projenin dijital ayağının tasarımında bu karar belirleyici olacaktır.
+
+---
+
+## 13. Kullanıcı Deneyimi Kurgusu
+
+Ankara Onarım Atlası’nın kullanıcı deneyimi yalnızca “haritaya bak ve adrese git” modeline dayanmamalıdır. Kullanıcı, şehirle ve zanaatla aşamalı bir ilişki kurmalıdır.
+
+### Aşama 1: Karşılaşma
+
+Kullanıcı projeyle şu kanallardan biri aracılığıyla karşılaşır:
+
+* Fiziksel atlas,
+* Üniversitede yer alan bir poster veya kart,
+* Kültür merkezindeki dağıtım noktası,
+* Sosyal medya içeriği,
+* QR kod,
+* Bir arkadaşın paylaştığı rota,
+* Bir usta veya dükkân üzerinden yönlendirme.
+
+### Aşama 2: Merak
+
+Kullanıcı bir katman veya tema görür:
+
+* Sesini onaranlar,
+* Zamanı yaşatanlar,
+* Ahşabı koruyanlar,
+* Kitabı iyileştirenler,
+* Analog hafızayı sürdürenler.
+
+Bu aşamada amaç, kullanıcıda “Ankara’da böyle bir ağ olduğunu bilmiyordum” duygusu oluşturmaktır.
+
+### Aşama 3: Rota Seçimi
+
+Kullanıcı ilgi alanına, bulunduğu konuma veya sahip olduğu nesneye göre bir rota seçer.
+
+Örneğin:
+
+* Plağı olan kullanıcı Ses ve Rezonans rotasına,
+* Eski aile kitabı olan kullanıcı Hafıza Restorasyonu rotasına,
+* Analog fotoğrafla ilgilenen kullanıcı Optik ve Mercek rotasına yönelir.
+
+### Aşama 4: Saha Deneyimi
+
+Kullanıcı harita üzerinden ilgili durağa ulaşır. Burada yalnızca hizmet almak değil; mekânı görmek, ustayı tanımak ve zanaat sürecini anlamak hedeflenir.
+
+### Aşama 5: Bilgi ve Hikâye
+
+Kullanıcı durağın hikâyesini, kullanılan teknikleri, nesnenin neden önemli olduğunu ve onarımın nasıl gerçekleştiğini öğrenir.
+
+### Aşama 6: Katılım
+
+Kullanıcı:
+
+* Yeni bir onarım noktası önerebilir,
+* Kendi nesnesinin onarım hikâyesini paylaşabilir,
+* Bir rotayı tamamladığını işaretleyebilir,
+* Atlasın yeni katmanlarının büyümesine katkı sunabilir.
+
+### Aşama 7: Davranış Değişimi
+
+Projenin nihai başarısı yalnızca kaç kişinin siteyi ziyaret ettiğiyle ölçülmez. Asıl amaç, kullanıcının bundan sonra bir nesne bozulduğunda ilk refleksinin “yenisini alayım” değil, “bunu nasıl yaşatabilirim?” olmasıdır.
+
+---
+
+## 14. Fiziksel Katman: Hafıza Nesnesi ve Saha Kılavuzu
+
+Fiziksel atlas, projenin arşivlik ve duygusal boyutunu taşır.
+
+Bu çıktı yalnızca bilgilendirme broşürü olarak görülmemelidir. Kullanıcının yanında taşıyabileceği, saklayabileceği, işaretleyebileceği ve şehirle kurduğu ilişkiye dahil edebileceği bir nesne olarak tasarlanmalıdır.
+
+### Fiziksel Atlasın Olası İçeriği
+
+* Proje manifestosu,
+* Beş katmanın genel açıklaması,
+* Her katmana ait rota haritası,
+* Durak isimleri ve kısa açıklamaları,
+* Usta veya mekân hikâyeleri,
+* QR kodlar,
+* Kullanıcının not alabileceği alanlar,
+* Rota tamamlama veya keşif işaretleri,
+* Onarım sözlüğü,
+* “Bu nesneyi atma, önce araştır” yönlendirmeleri.
+
+### Fiziksel Dağıtım Noktaları
+
+* Üniversitelerin tasarım, sanat ve mimarlık fakülteleri,
+* Üniversite kütüphaneleri,
+* CerModern gibi kültür alanları,
+* CSO Ada Ankara,
+* Doğan Taşdelen Çağdaş Sanatlar Merkezi,
+* Kızılay ve Ayrancı hattındaki bağımsız kitabevleri,
+* Atlas içinde yer alan pilot ustalar ve dükkânlar.
+
+Fiziksel atlasın en önemli avantajı, projeyi dijital bir içerikten çıkarıp elde tutulur, saklanır ve şehir içinde kullanılır bir hafıza nesnesine dönüştürmesidir.
+
+---
+
+## 15. Dijital Katman: Canlı Veri ve Operatör Arayüzü
+
+Dijital katman, fiziksel atlasın güncel kalan, genişleyen ve kullanıcıyla etkileşim kuran tarafıdır.
+
+Bu alanın kesin olarak blog, sosyal ağ, kurumsal site veya web uygulaması biçiminde tasarlanıp tasarlanmayacağı henüz belirlenmemiştir. Ancak hangi model seçilirse seçilsin, dijital sistemin taşıması gereken temel işlevler nettir.
+
+### Dijital Sistemin Temel Görevleri
+
+* Projenin ne olduğunu anlatmak,
+* Katmanları ve rotaları görsel biçimde sunmak,
+* Ustaları ve onarım noktalarını görünür kılmak,
+* Kullanıcıyı fiziksel mekâna yönlendirmek,
+* Harita ve ulaşım bilgisi sağlamak,
+* Yeni onarım noktalarının önerilmesini mümkün kılmak,
+* Projeyi yaşayan ve büyüyen bir arşive dönüştürmek,
+* Fiziksel atlas ile dijital deneyim arasında QR kod aracılığıyla bağ kurmak.
+
+### Dijital Sistemde Bulunabilecek Temel İçerikler
+
+* Ana manifesto sayfası,
+* Katmanlar ekranı,
+* Rotalar ekranı,
+* Harita görünümü,
+* Her durak için detay sayfası,
+* Usta portreleri,
+* Nesne ve onarım hikâyeleri,
+* Fotoğraf arşivi,
+* Kullanıcı katkı formu,
+* Yeni nokta önerme sistemi,
+* Saha günlüğü veya editoryal içerik alanı,
+* Fiziksel atlası edinme bilgileri.
+
+### Kritik İlke
+
+Dijital alan yalnızca proje sunum dosyasının internete taşınmış hâli olmamalıdır.
+
+Kullanıcıyı şehir içinde harekete geçirmeyen, yalnızca proje metnini anlatan bir site, atlas fikrinin deneyimsel gücünü eksik bırakır.
+
+---
+
+## 16. Web Sitesi Tartışmasında Cevaplanması Gereken Ana Soru
+
+Projenin web sitesi şu seçeneklerden hangisine daha yakın olmalıdır?
+
+### Seçenek 1: Editoryal Blog / Dijital Dergi
+
+Ustaların hikâyeleri, onarım kültürü, saha gözlemleri ve nesne anlatıları ön planda olur.
+
+**Güçlü Yanı:** Hikâye anlatımı ve kültürel değer üretimi güçlüdür.
+**Riski:** Kullanıcıyı gerçek rotaya yönlendirme ve canlı veri oluşturma yönü zayıf kalabilir.
+
+### Seçenek 2: Sosyal Medya Benzeri Topluluk Platformu
+
+Kullanıcılar kendi onarım deneyimlerini, keşfettikleri ustaları veya nesnelerini paylaşabilir.
+
+**Güçlü Yanı:** Katılım ve büyüme potansiyeli yüksektir.
+**Riski:** Küratöryel kalite düşebilir; proje sıradan içerik akışına veya denetlenemeyen işletme önerilerine dönüşebilir.
+
+### Seçenek 3: Bireysel Keşif ve Rota Deneyimi Sitesi
+
+Kullanıcı kendi ilgisine göre rota seçer, haritada dolaşır, duraklara gider ve keşif deneyimi yaşar.
+
+**Güçlü Yanı:** Projenin “operatör” fikrine en doğrudan hizmet eden modeldir.
+**Riski:** Düzenli içerik ve güncel veri olmadan zamanla statik kalabilir.
+
+### Seçenek 4: Kurumsal Proje Dosyası Sitesi
+
+Projenin amacı, süreci, araştırması, görsel kimliği ve çıktıları profesyonel biçimde sunulur.
+
+**Güçlü Yanı:** Akademik sunum, jüri, kurum ve iş birliği görüşmeleri açısından güvenilir görünür.
+**Riski:** Genç kullanıcı için deneyimsel ve tekrar ziyaret edilebilir bir ürün olmaktan uzaklaşabilir.
+
+### Seçenek 5: Hibrit Atlas Web-App
+
+Editoryal anlatım, interaktif rota, usta profilleri, harita sistemi ve kontrollü kullanıcı katkısı aynı yapı içinde birleşir.
+
+**Güçlü Yanı:** Projenin fiziksel, kültürel ve katılımcı yönlerinin tamamını birlikte taşıyabilir.
+**Riski:** Tasarım ve geliştirme süreci daha kapsamlıdır; içerik yönetimi ve doğrulama sistemi iyi kurulmalıdır.
+
+Bu seçenekler arasında karar verilmeden önce projenin önceliğinin netleşmesi gerekir:
+
+* Öncelik projeyi etkileyici biçimde anlatmak mı?
+* Kullanıcıyı rotaya çıkarmak mı?
+* Ustaları görünür kılmak mı?
+* Yaşayan bir arşiv oluşturmak mı?
+* Kullanıcı katkısıyla sistemi büyütmek mi?
+* Kurumlara sunulabilecek sürdürülebilir bir kültür projesi geliştirmek mi?
+
+Büyük olasılıkla Ankara Onarım Atlası tek bir kategoriye sıkışmayacak; ancak hangi işlevin merkezde olacağı, sitenin karakterini belirleyecektir.
+
+---
+
+## 17. Görsel Dil ve Marka Karakteri
+
+Ankara Onarım Atlası’nın görsel dili, projenin hem arşivsel hem de keşif odaklı niteliğini yansıtmalıdır.
+
+### Mevcut Sunum Dilinin Özellikleri
+
+* Kırmızı ve krem ağırlıklı renk dünyası,
+* Yüksek kontrast,
+* Editoryal ve araştırma dosyası hissi,
+* Güçlü büyük başlıklar,
+* Fotoğraf, belge ve doku kullanımı,
+* Kent araştırması ve kültürel arşiv duygusu.
+
+### Rota Haritalarında Geliştirilebilecek Dil
+
+* El çizimi veya illüstratif kent haritası,
+* Ankara’nın gerçek mekânsal işaretlerini kullanan yapı,
+* Yerel anıtlar, sokaklar, kale, çarşı, apartman cepheleri ve atölye detayları,
+* Katmanlara göre renk kodlama,
+* Teknik harita ile duygusal keşif rehberi arasında bir estetik.
+
+### Marka Karakteri
+
+Proje şu duyguları taşımalıdır:
+
+* Merak uyandıran,
+* Yerel,
+* Dokulu,
+* Samimi fakat ciddi,
+* Arşivsel fakat genç,
+* Sürdürülebilir fakat didaktik olmayan,
+* Kültürel fakat gündelik hayattan kopmayan.
+
+---
+
+## 18. Etik ve Sürdürülebilirlik İlkeleri
+
+Proje geliştirilirken yalnızca estetik veya deneyimsel değil, etik sorumluluklar da dikkate alınmalıdır.
+
+### Usta Temsili
+
+Ustalar yalnızca “estetik içerik” veya “gizli keşif noktası” olarak kullanılmamalıdır. Her usta kendi emeği, bilgisi ve izni doğrultusunda temsil edilmelidir.
+
+### Doğrulama
+
+Siteye veya atlasa dahil edilen her noktanın:
+
+* Gerçekten faaliyet gösterdiği,
+* İlgili uzmanlığı taşıdığı,
+* Ziyaret veya iletişim koşullarının doğru olduğu
+
+kontrol edilmelidir.
+
+### Mahremiyet ve Saygı
+
+Küçük atölyeler veya bireysel ustalar dijital görünürlük konusunda hassas olabilir. Fotoğraf, adres, çalışma saatleri ve hikâye anlatımı izinli biçimde kullanılmalıdır.
+
+### Kontrollü Katılım
+
+Kullanıcı katkısı tamamen açık ve denetimsiz bir sosyal akış şeklinde çalışırsa projenin niteliği zarar görebilir. Bu nedenle önerilen yeni noktalar önce inceleme ve doğrulama sürecinden geçirilmelidir.
+
+### Gerçek Sürdürülebilirlik
+
+Proje, sürdürülebilirliği yalnızca slogan olarak kullanmamalı; gerçekten nesne ömrünü uzatan, yerel emeği destekleyen ve kültürel bilgiyi koruyan uygulamalara dayanmalıdır.
+
+---
+
+## 19. İş Birliği ve Yayılım Potansiyeli
+
+Ankara Onarım Atlası zaman içinde yalnızca bir öğrenci projesi olarak kalmayıp kültürel ve kamusal bir tasarım projesine dönüşebilir.
+
+### Potansiyel İş Birliği Alanları
+
+* Kültür ve Turizm Bakanlığı,
+* Ankara Büyükşehir Belediyesi,
+* Çankaya Belediyesi,
+* Altındağ Belediyesi,
+* Üniversitelerin tasarım ve sanat fakülteleri,
+* CerModern,
+* CSO Ada Ankara,
+* Kent müzeleri,
+* Tasarım araştırma merkezleri,
+* Bağımsız kitabevleri,
+* Yerel zanaat ve esnaf ağları,
+* Sürdürülebilir yaşam toplulukları.
+
+### İş Birliği Amaçları
+
+* Atlas basımı ve dağıtımı,
+* Atölye ziyaret günleri,
+* Genç kullanıcılar için rota yürüyüşleri,
+* Usta söyleşileri,
+* Sergi veya arşiv alanı oluşturulması,
+* Dijital harita verisinin geliştirilmesi,
+* Ankara’daki onarım kültürünün belgelenmesi.
+
+---
+
+## 20. Projenin Başarı Kriterleri
+
+Projenin başarısı yalnızca güzel bir atlas veya etkileyici bir web sitesi üretmekle ölçülmemelidir.
+
+Başarı şu göstergeler üzerinden değerlendirilebilir:
+
+### Görünürlük
+
+* Kaç usta veya atölye belgelenmiştir?
+* Kaç farklı onarım pratiği görünür hâle gelmiştir?
+* Proje genç kullanıcılar tarafından ne kadar fark edilmiştir?
+
+### Katılım
+
+* Kaç kullanıcı rota keşfetmiştir?
+* Kaç kullanıcı QR kod üzerinden dijital alana ulaşmıştır?
+* Kaç yeni onarım noktası önerilmiştir?
+
+### Davranış Değişimi
+
+* Kullanıcılar nesnelerini onarmaya daha açık hâle gelmiş midir?
+* Onarım, kullanıcı gözünde eski/yoksul bir davranış olmaktan çıkıp değerli bir tercih olarak algılanmış mıdır?
+
+### Kültürel Etki
+
+* Ustalar ve zanaat pratikleri daha fazla görünürlük kazanmış mıdır?
+* Kent hafızasına ilişkin yeni bir arşiv oluşmuş mudur?
+* Proje kurumlarla veya kültür alanlarıyla sürdürülebilir ilişki kurabilmiş midir?
+
+---
+
+## 21. Geliştirme Yol Haritası
+
+### Aşama 1: Kavramsal Netleştirme
+
+* Manifestonun kesinleştirilmesi,
+* Proje dilinin sadeleştirilmesi,
+* Katman isimlerinin gözden geçirilmesi,
+* Projenin ana değer önerisinin netleştirilmesi.
+
+### Aşama 2: Saha Verisi ve Kürasyon
+
+* Gerçek ustaların belirlenmesi,
+* İzinlerin alınması,
+* Adres ve iletişim bilgilerinin doğrulanması,
+* Fotoğraf ve hikâye arşivinin oluşturulması,
+* Her rota için yeterli içerik toplanması.
+
+### Aşama 3: Fiziksel Atlas Tasarımı
+
+* Harita sisteminin oluşturulması,
+* Katman renklerinin belirlenmesi,
+* Sayfa ve pafta düzeninin geliştirilmesi,
+* QR kod bağlantılarının hazırlanması,
+* Baskı prototipinin test edilmesi.
+
+### Aşama 4: Dijital Ürün Kararı
+
+* Web sitesinin ana amacının belirlenmesi,
+* Blog, rota uygulaması, sosyal platform, proje sunum sitesi veya hibrit model seçeneklerinin karşılaştırılması,
+* Kullanıcı senaryolarının çıkarılması,
+* Site mimarisinin belirlenmesi.
+
+### Aşama 5: Dijital Prototip
+
+* Ana sayfa,
+* Katmanlar sayfası,
+* Rota ve harita ekranı,
+* Durak detay sayfaları,
+* Usta profilleri,
+* Yeni nokta önerme alanı,
+* Mobil kullanım testleri.
+
+### Aşama 6: Pilot Uygulama
+
+* Bir veya iki katmanla başlangıç,
+* Sınırlı sayıda doğrulanmış durak,
+* Gerçek kullanıcı testi,
+* Geri bildirim toplama,
+* Harita ve içerik iyileştirmesi.
+
+### Aşama 7: Yaygınlaştırma
+
+* Beş katmana genişleme,
+* Fiziksel dağıtım noktaları,
+* Kültür kurumlarıyla iş birlikleri,
+* Etkinlikler ve rota yürüyüşleri,
+* Dijital arşivin düzenli güncellenmesi.
+
+---
+
+## 22. Mevcut Sunum Dosyasında Geliştirilmesi Gereken Noktalar
+
+Projenin fikri oldukça güçlüdür; ancak sonraki sunum ve dijital ürün aşaması için bazı bölümlerin netleştirilmesi gerekir.
+
+### Tarih Tutarlılığı
+
+Sunum genelinde Nisan 2026 tarihi kullanılırken katman sisteminin yer aldığı sayfada farklı bir tarih görünmektedir. Nihai proje dosyasında tarih kullanımı tutarlı hâle getirilmelidir.
+
+### Katmanların Nihai Statüsü
+
+Beşli sistem güçlü bir başlangıçtır; ancak saha verisiyle doğrulanmadan kesin ve değişmez yapı olarak sunulmamalıdır. Özellikle yeni rota fikirleri eklendikçe katman–alt rota ilişkisi belirlenmelidir.
+
+### Genç Kullanıcı Motivasyonlarının Ayrıştırılması
+
+Sürdürülebilirlik, biriciklik arayışı ve kentsel merak birbirinden farklı motivasyonlardır. Nihai metinlerde her birinin kendine özgü kullanıcı faydası daha açık biçimde yazılmalıdır.
+
+### Kurumsal İş Birliği Dilinin Netliği
+
+Kurumlarla iş birliği hedefi güçlü bir potansiyel olarak sunulabilir; ancak resmî onay veya ortaklık gerçekleşmeden kesinleşmiş ortaklık izlenimi yaratılmamalıdır.
+
+### Dijital Sistemin Rolü
+
+Web sitesi yalnızca sunumu sergileyen bir vitrin mi olacak, yoksa gerçek kullanıcıların rota bulduğu ve yeni veri eklediği yaşayan bir sistem mi olacak? Bundan sonraki en önemli tasarım kararı budur.
+
