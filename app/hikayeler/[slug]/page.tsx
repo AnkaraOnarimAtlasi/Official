@@ -205,7 +205,7 @@ export default async function StoryDetailPage({ params }: PageProps) {
               </span>
               {story.excerpt}
             </p>
-            <p>{story.body}</p>
+            <p className="whitespace-pre-line">{story.body}</p>
             <p className="text-ink/65">
               Ankara Onarım Atlası, görünmeyen onarım ağlarını izinli kayıtla
               belgeler. Hiçbir usta, atölye veya bireysel hikâye doğrulama ve

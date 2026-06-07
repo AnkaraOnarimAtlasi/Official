@@ -24,7 +24,7 @@ const STORY_TYPES: Record<string, string> = {
 };
 
 const CATEGORIES = [
-  { key: 'all', label: 'Tümü', count: MOCK_STORIES.length },
+  { key: 'all', label: 'Tümü' },
   { key: 'master-portrait', label: 'Usta Portreleri' },
   { key: 'object-story', label: 'Nesne Anlatıları' },
   { key: 'field-journal', label: 'Saha Günlükleri' },
@@ -32,15 +32,26 @@ const CATEGORIES = [
   { key: 'lost-crafts', label: 'Kayıp Zanaatlar' },
 ];
 
-export default function HikayelerPage() {
+interface PageProps {
+  searchParams: Promise<{ type?: string }>;
+}
+
+export default async function HikayelerPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const activeType = typeof params.type === 'string' ? params.type : 'all';
+
+  const filteredStories = activeType === 'all'
+    ? MOCK_STORIES
+    : MOCK_STORIES.filter((s) => s.storyType === activeType);
+
+  const featured = filteredStories.find((s) => s.isFeatured) ?? filteredStories[0];
+  const rest = filteredStories.filter((s) => s.slug !== featured?.slug);
+  const featuredLayer = featured ? LAYERS.find((l) => l.slug === featured.layerSlug) : null;
+
   const breadcrumb = [
     { label: 'Atlas', href: '/atlas' },
     { label: 'Hikâyeler · Saha Dosyaları' },
   ];
-
-  const featured = MOCK_STORIES.find((s) => s.isFeatured) ?? MOCK_STORIES[0];
-  const rest = MOCK_STORIES.filter((s) => s.slug !== featured?.slug);
-  const featuredLayer = LAYERS.find((l) => l.slug === featured?.layerSlug);
 
   return (
     <article>
@@ -49,7 +60,7 @@ export default function HikayelerPage() {
         <div className="mx-auto flex max-w-layout items-center justify-between gap-6 px-5 py-3 text-[0.68rem] uppercase tracking-[0.22em] text-ink/55 md:px-8">
           <span>Editoryal arşiv · Saha dosyaları</span>
           <span className="hidden sm:inline">Her dosya ayrı bir izle açılır</span>
-          <span className="tabular-nums">{MOCK_STORIES.length} dosya · taslak</span>
+          <span className="tabular-nums">{MOCK_STORIES.length} dosya · {activeType === 'all' ? 'Tümü' : CATEGORIES.find(c => c.key === activeType)?.label}</span>
         </div>
       </div>
 
@@ -77,27 +88,40 @@ export default function HikayelerPage() {
         </div>
       </section>
 
-      {/* Kategori filtreleri (statik, gelecekte interaktif) */}
+      {/* Kategori filtreleri (interaktif) */}
       <section className="mx-auto max-w-layout px-5 pb-10 md:px-8">
         <ul className="flex flex-wrap items-center gap-2">
-          {CATEGORIES.map((c, i) => (
-            <li key={c.key}>
-              <span
-                className={
-                  i === 0
-                    ? 'inline-flex items-center gap-2 rounded-full border border-ink bg-ink px-3.5 py-1.5 text-[0.72rem] font-medium tracking-wide text-paper-light'
-                    : 'inline-flex items-center gap-2 rounded-full border border-ink/20 bg-paper-light px-3.5 py-1.5 text-[0.72rem] font-medium tracking-wide text-ink/75 transition-colors hover:border-ink hover:text-ink'
-                }
-              >
-                {c.label}
-                {c.count !== undefined && (
-                  <span className="rounded-full bg-paper-light/20 px-1.5 text-[0.65rem] tabular-nums">
-                    {c.count}
+          {CATEGORIES.map((c) => {
+            const isActive = activeType === c.key;
+            const href = c.key === 'all' ? '/hikayeler' : `/hikayeler?type=${c.key}`;
+            const count = c.key === 'all'
+              ? MOCK_STORIES.length
+              : MOCK_STORIES.filter((s) => s.storyType === c.key).length;
+
+            return (
+              <li key={c.key}>
+                <Link
+                  href={href}
+                  className={
+                    isActive
+                      ? 'inline-flex items-center gap-2 rounded-full border border-ink bg-ink px-3.5 py-1.5 text-[0.72rem] font-medium tracking-wide text-paper-light cursor-pointer select-none transition-colors'
+                      : 'inline-flex items-center gap-2 rounded-full border border-ink/20 bg-paper-light px-3.5 py-1.5 text-[0.72rem] font-medium tracking-wide text-ink/75 cursor-pointer select-none transition-all hover:border-ink hover:text-ink hover:shadow-sm'
+                  }
+                >
+                  {c.label}
+                  <span
+                    className={
+                      isActive
+                        ? 'rounded-full bg-paper-light/20 px-1.5 text-[0.65rem] tabular-nums text-paper-light'
+                        : 'rounded-full bg-ink/10 px-1.5 text-[0.65rem] tabular-nums text-ink/60'
+                    }
+                  >
+                    {count}
                   </span>
-                )}
-              </span>
-            </li>
-          ))}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
@@ -110,7 +134,7 @@ export default function HikayelerPage() {
           <div className="mx-auto grid max-w-layout grid-cols-1 gap-10 px-5 py-16 md:grid-cols-12 md:gap-14 md:px-8 md:py-20">
             <figure className="md:col-span-7">
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-ink/25 shadow-sheet">
-                {featuredLayer && (
+                {featuredLayer ? (
                   <Image
                     src={featuredLayer.mapImage}
                     alt={`Harita — ${featuredLayer.title}`}
@@ -119,6 +143,10 @@ export default function HikayelerPage() {
                     className="object-cover opacity-95"
                     priority
                   />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-paper">
+                    <span className="archive-label text-ink/30">Görsel bekleniyor</span>
+                  </div>
                 )}
                 {featuredLayer && (
                   <span
@@ -138,11 +166,11 @@ export default function HikayelerPage() {
               </p>
               <h2
                 id="featured-story"
-                className="display-2 text-3xl text-ink md:text-4xl lg:text-[3rem]"
+                className="display-2 text-3xl text-ink md:text-4xl lg:text-[3rem] leading-none"
               >
                 {featured.title}
               </h2>
-              <p className="max-w-prose text-base leading-relaxed text-ink/80">
+              <p className="max-w-prose text-base leading-relaxed text-ink/80 line-clamp-4">
                 {featured.excerpt}
               </p>
               <div className="flex flex-wrap items-center gap-3">
@@ -178,58 +206,64 @@ export default function HikayelerPage() {
           <div>
             <p className="archive-label text-ink/55">Arşiv İndeksi</p>
             <h2 className="display-2 mt-2 text-3xl text-ink md:text-4xl">
-              Tüm dosyalar.
+              {activeType === 'all' ? 'Tüm dosyalar.' : `${CATEGORIES.find(c => c.key === activeType)?.label}.`}
             </h2>
           </div>
           <p className="hand-note text-base text-ink/55">
-            {rest.length} taslak dosya
+            {rest.length} dosya listeleniyor
           </p>
         </header>
 
-        <ol className="divide-y divide-ink/10 border-y border-ink/10">
-          {rest.map((story, i) => {
-            const layer = LAYERS.find((l) => l.slug === story.layerSlug);
-            return (
-              <li key={story.slug}>
-                <Link
-                  href={`/hikayeler/${story.slug}`}
-                  className="group grid grid-cols-12 items-center gap-4 py-6 transition-colors hover:bg-paper-light md:py-8"
-                >
-                  <span className="col-span-2 font-display text-3xl font-semibold tabular-nums text-ink/55 md:text-4xl">
-                    {String(i + 2).padStart(2, '0')}
-                  </span>
-                  <div className="col-span-10 md:col-span-7">
-                    <p className="archive-label text-ink/55">
-                      {STORY_TYPES[story.storyType] ?? 'Hikâye'}
-                    </p>
-                    <h3 className="mt-1 font-display text-xl font-semibold tracking-editorial text-ink transition-colors group-hover:text-[--atlas-red-deep] md:text-2xl">
-                      {story.title}
-                    </h3>
-                    <p className="mt-1 line-clamp-2 text-[0.92rem] text-ink/65">
-                      {story.excerpt}
-                    </p>
-                  </div>
-                  <div className="col-span-12 flex items-center justify-between gap-3 md:col-span-3 md:justify-end md:text-right">
-                    {layer && (
-                      <span className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-ink/55">
-                        <span
-                          aria-hidden
-                          className="block h-1.5 w-1.5 rounded-full"
-                          style={{ backgroundColor: layer.colorHex }}
-                        />
-                        Harita {layer.number}
-                      </span>
-                    )}
-                    <span className="hidden text-[0.72rem] uppercase tracking-[0.18em] text-ink/55 md:inline">
-                      {story.readingTimeMinutes} dk
+        {rest.length > 0 ? (
+          <ol className="divide-y divide-ink/10 border-y border-ink/10">
+            {rest.map((story, i) => {
+              const layer = LAYERS.find((l) => l.slug === story.layerSlug);
+              return (
+                <li key={story.slug}>
+                  <Link
+                    href={`/hikayeler/${story.slug}`}
+                    className="group grid grid-cols-12 items-center gap-4 py-6 transition-colors hover:bg-paper-light md:py-8"
+                  >
+                    <span className="col-span-2 font-display text-3xl font-semibold tabular-nums text-ink/55 md:text-4xl">
+                      {String(i + 2).padStart(2, '0')}
                     </span>
-                    {!story.isPublished && <DraftBadge />}
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
+                    <div className="col-span-10 md:col-span-7">
+                      <p className="archive-label text-ink/55">
+                        {STORY_TYPES[story.storyType] ?? 'Hikâye'}
+                      </p>
+                      <h3 className="mt-1 font-display text-xl font-semibold tracking-editorial text-ink transition-colors group-hover:text-[--atlas-red-deep] md:text-2xl">
+                        {story.title}
+                      </h3>
+                      <p className="mt-1 line-clamp-2 text-[0.92rem] text-ink/65">
+                        {story.excerpt}
+                      </p>
+                    </div>
+                    <div className="col-span-12 flex items-center justify-between gap-3 md:col-span-3 md:justify-end md:text-right">
+                      {layer && (
+                        <span className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-ink/55">
+                          <span
+                            aria-hidden
+                            className="block h-1.5 w-1.5 rounded-full"
+                            style={{ backgroundColor: layer.colorHex }}
+                          />
+                          Harita {layer.number}
+                        </span>
+                      )}
+                      <span className="hidden text-[0.72rem] uppercase tracking-[0.18em] text-ink/55 md:inline">
+                        {story.readingTimeMinutes} dk
+                      </span>
+                      {!story.isPublished && <DraftBadge />}
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        ) : (
+          <div className="py-12 text-center rounded-sm border border-dashed border-ink/20 bg-paper-light/40">
+            <p className="hand-note text-lg text-ink/60">Bu kategoride listelenecek başka dosya bulunmuyor.</p>
+          </div>
+        )}
       </section>
 
       {/* Kürasyon notu */}
