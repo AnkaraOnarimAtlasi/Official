@@ -12,7 +12,7 @@ const BookCanvas = dynamic(() => import('@/components/three/BookCanvas'), {
 
 function BookLoading() {
   return (
-    <div className="relative w-full pb-[75%] h-0 rounded-sm border border-ink/10 bg-paper-light shadow-inner overflow-hidden">
+    <div className="relative w-full aspect-[4/3] rounded-sm border border-ink/10 bg-paper-light shadow-inner overflow-hidden">
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="archive-label text-ink/30 animate-pulse">Tuval Hazırlanıyor...</span>
       </div>
@@ -23,11 +23,11 @@ function BookLoading() {
 // Beautiful 2D Static Cover Fallback
 function BookFallback() {
   return (
-    <div className="relative w-full pb-[75%] h-0 rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none">
+    <div className="relative w-full aspect-[4/3] rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none">
       <div className="absolute inset-0 flex items-center justify-center p-8 bg-[#ebdcb7]/10">
         <div className="relative aspect-[1.39] w-[82%] max-w-[420px] rounded-sm border border-ink/20 shadow-sheet overflow-hidden">
           <Image
-            src="/atlas/front-cover.png"
+            src="/atlas/front-cover.webp"
             alt="Ankara Onarım Atlası Ön Kapak"
             fill
             sizes="(min-width: 1024px) 36vw, 50vw"
@@ -56,8 +56,8 @@ export function BookMockup() {
       try {
         const canvas = document.createElement('canvas');
         const support = !!(
-          window.WebGL2RenderingContext &&
-          (canvas.getContext('webgl2') || canvas.getContext('webgl'))
+          (window.WebGLRenderingContext || (window as any).WebGL2RenderingContext) &&
+          (canvas.getContext('webgl') || canvas.getContext('experimental-webgl') || canvas.getContext('webgl2'))
         );
         setWebGLSupported(support);
       } catch {

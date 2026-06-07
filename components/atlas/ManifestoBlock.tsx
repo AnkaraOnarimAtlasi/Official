@@ -38,9 +38,7 @@ export function ManifestoBlock() {
               className="display-1 text-4xl text-ink md:text-5xl lg:text-[4.2rem]"
               style={{ lineHeight: '1.15' }}
             >
-              Şehir{' '}
-              <span className="italic">inşa edilen</span>
-              {' '}değil,{' '}
+              Şehir inşa edilen değil,{' '}
               <span className="italic text-[--atlas-red-deep]">onarılarak</span>{' '}
               <span className="italic">sürdürülen</span> bir
               sistemdir.

@@ -2,17 +2,17 @@
 
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Suspense, useRef, useState, useMemo } from 'react';
-import { OrbitControls, useTexture, Center } from '@react-three/drei';
+import { OrbitControls, useTexture, Center, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
 
 function BookMesh() {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
 
-  // Load front and back cover textures
+  // Load optimized front and back cover textures (WebP)
   const [frontTex, backTex] = useTexture([
-    '/atlas/front-cover.png',
-    '/atlas/back-cover.png',
+    '/atlas/front-cover.webp',
+    '/atlas/back-cover.webp',
   ]);
 
   // Gentle auto-rotation / hover tilting using useFrame
@@ -72,7 +72,7 @@ function BookMesh() {
   }, [frontTex, backTex]);
 
   // Based on PDF dimensions: Rect(0, 0, 742, 532) -> aspect ratio is ~1.39
-  // We use Width = 4.17, Height = 3.0, Thickness = 0.18
+  // We use Width = 4.17, Height = 3.0, Thickness = 0.08 (sleek booklet/brochure style)
   return (
     <mesh
       ref={meshRef}
@@ -82,59 +82,61 @@ function BookMesh() {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <boxGeometry args={[4.17, 3.0, 0.18]} />
+      <boxGeometry args={[4.17, 3.0, 0.08]} />
     </mesh>
   );
 }
 
 export default function BookCanvas() {
   return (
-    <div className="relative w-full pb-[75%] h-0 rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none cursor-grab active:cursor-grabbing">
+    <div className="relative w-full aspect-[4/3] rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none cursor-grab active:cursor-grabbing">
       <div className="absolute inset-0 w-full h-full">
-        {/* Texture loading fallback */}
-        <Suspense
-          fallback={
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-paper-light">
-              <span className="archive-label text-ink/35 animate-pulse">3D Model Yükleniyor...</span>
-            </div>
-          }
+        <Canvas
+          shadows
+          camera={{ position: [0, 0, 5.2], fov: 45 }}
+          className="w-full h-full bg-[#ebdcb7]/20"
         >
-          <Canvas
-            shadows
-            camera={{ position: [0, 0, 5.2], fov: 45 }}
-            className="w-full h-full bg-[#ebdcb7]/20"
-          >
-            {/* Studio lighting setup */}
-            <ambientLight intensity={1.1} />
-            
-            <directionalLight
-              position={[4, 6, 5]}
-              intensity={1.6}
-              castShadow
-              shadow-mapSize-width={1024}
-              shadow-mapSize-height={1024}
-              shadow-bias={-0.0005}
-            />
-            
-            <directionalLight
-              position={[-4, 3, -4]}
-              intensity={0.6}
-            />
+          {/* Studio lighting setup */}
+          <ambientLight intensity={1.1} />
+          
+          <directionalLight
+            position={[4, 6, 5]}
+            intensity={1.6}
+            castShadow
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            shadow-bias={-0.0005}
+          />
+          
+          <directionalLight
+            position={[-4, 3, -4]}
+            intensity={0.6}
+          />
 
+          <Suspense fallback={null}>
             <Center>
               <BookMesh />
             </Center>
-
-            {/* User manual rotation control - enableZoom is false to allow page scroll */}
-            <OrbitControls
-              enableZoom={false}
-              enablePan={false}
-              minPolarAngle={Math.PI / 4}
-              maxPolarAngle={Math.PI * 3 / 4}
-              makeDefault
+            
+            {/* Soft contact shadow underneath the floating book */}
+            <ContactShadows
+              position={[0, -1.55, 0]}
+              opacity={0.45}
+              scale={7}
+              blur={1.6}
+              far={1.2}
             />
-          </Canvas>
-        </Suspense>
+          </Suspense>
+
+          {/* User manual rotation control - enableZoom is false to allow page scroll */}
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            minPolarAngle={Math.PI / 4}
+            maxPolarAngle={Math.PI * 3 / 4}
+            makeDefault
+          />
+        </Canvas>
 
         {/* 3D interaction guide tag */}
         <div className="absolute bottom-3 right-3 pointer-events-none z-10">

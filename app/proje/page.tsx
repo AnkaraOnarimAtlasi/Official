@@ -91,7 +91,7 @@ export default function ProjePage() {
             <p className="archive-label text-ink/55">Manifesto</p>
             <h1 className="display-1 mt-4 text-[2.6rem] leading-[0.95] text-ink sm:text-5xl md:text-6xl lg:text-[5.4rem]">
               Şehir{' '}
-              <span className="italic text-[--atlas-red-deep]">inşa edilen</span>{' '}
+              <span className="text-[--atlas-red-deep]">inşa edilen</span>{' '}
               değil, <span className="italic">onarılarak sürdürülen</span> bir
               sistemdir.
             </h1>
