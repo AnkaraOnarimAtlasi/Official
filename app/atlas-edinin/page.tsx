@@ -3,6 +3,7 @@ import { AtlasButton, AtlasIconArrow } from '@/components/ui/AtlasButton';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { DraftBadge } from '@/components/ui/DraftBadge';
 import { CantaMockupsCarousel } from '@/components/atlas/CantaMockupsCarousel';
+import Image from 'next/image';
 import { BookMockup } from '@/components/atlas/BookMockup';
 import { MOCK_DISTRIBUTION } from '@/lib/constants/mockDistribution';
 import { SITE } from '@/lib/constants/site';
@@ -113,6 +114,35 @@ export default function AtlasEdininPage() {
         </div>
       </section>
 
+      {/* ── Yeni Bölüm: Fiziksel Harita Mockup Detayı ──────────────── */}
+      <section className="border-t border-border bg-paper-light">
+        <div className="mx-auto max-w-layout px-5 py-16 md:px-8 md:py-24">
+          <div className="grid gap-10 md:grid-cols-12 items-center">
+            <div className="md:col-span-6 relative aspect-[1.5] w-full rounded-sm overflow-hidden bg-paper-deep/10 border border-ink/15 shadow-sheet">
+              <Image
+                src="/mockups/atlas-mockup.webp"
+                alt="Ankara Onarım Atlası Fiziksel Eser Mockup"
+                fill
+                sizes="(min-width: 768px) 45vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="md:col-span-6 md:pl-8">
+              <p className="archive-label text-ink/50">Baskı & Edisyon</p>
+              <h3 className="font-display text-2.5xl md:text-3xl text-ink mt-3">
+                Sınırlı Sayıda Üretilen <br />
+                <span className="italic font-serif">Koleksiyon Paftaları</span>
+              </h3>
+              <p className="mt-4 text-sm text-ink/75 leading-relaxed">
+                Her bir harita seti, Ankara'nın zanaat katmanlarını temsil eden özel renk kodlarıyla basılmıştır. 
+                120g mat asitsiz krem kağıda yapılan risograf ve ofset baskılar, ustaların elindeki malzemenin dokusunu hissettirir. 
+                Saha araştırmalarında yıpranmaması için katlama noktaları özel olarak güçlendirilmiştir.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Yeni Bölüm: Onarım Atlası Eşyaları (Bez Çantalar) ──────────────── */}
       <section className="relative overflow-hidden border-t border-border bg-paper-deep/30" data-bg="#eef7f5">
         <div className="mx-auto max-w-layout px-5 py-20 md:px-8 md:py-28">
@@ -130,6 +160,173 @@ export default function AtlasEdininPage() {
             </p>
           </div>
           <CantaMockupsCarousel />
+        </div>
+      </section>
+
+      {/* ── Yeni Bölüm: Saha Aksesuarları ve Çıkartmalar ──────────────── */}
+      <section className="border-t border-border bg-paper">
+        <div className="mx-auto max-w-layout px-5 py-20 md:px-8 md:py-28">
+          <div className="grid gap-12 lg:grid-cols-12">
+            {/* Sol taraf: Başlık ve Giriş */}
+            <div className="lg:col-span-4 lg:sticky lg:top-8 self-start">
+              <p className="archive-label text-ink/50">Saha Aksesuarları</p>
+              <h2 className="display-2 mt-3 text-3xl text-ink md:text-4xl lg:text-[2.8rem] leading-[1.1]">
+                Zanaat <br />
+                <span className="italic text-[--atlas-red-deep]">
+                  Eşyaları.
+                </span>
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-ink/70">
+                Saha çalışmalarımızda ve günlük yaşamınızda size eşlik edecek, 
+                onarım felsefesini ve zanaat estetiğini günlük nesnelere taşıyan özel tasarım ürünlerimiz.
+              </p>
+            </div>
+
+            {/* Sağ taraf: Ürün Gridleri */}
+            <div className="lg:col-span-8 space-y-16">
+              {/* Yelpaze & Şemsiye & Poster Grid */}
+              <div className="grid gap-6 sm:grid-cols-2">
+                {/* Yelpaze */}
+                <div className="rounded-sm border border-ink/15 bg-paper-light p-5 shadow-paper flex flex-col justify-between">
+                  <div className="relative aspect-square w-full rounded-sm overflow-hidden bg-paper-deep/10 border border-ink/5">
+                    <Image
+                      src="/mockups/yelpaze.webp"
+                      alt="Zanaat Yelpazesi"
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 35vw, 80vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <h3 className="font-display text-lg font-semibold text-ink">Zanaat Yelpazesi</h3>
+                    <p className="hand-note text-sm text-[--layer-traditional-crafts]">Geleneksel El Sanatları Serisi</p>
+                    <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                      Sıcak yaz günlerinde sahada esinti sağlayan, cam ve çini desenlerinin renklerini taşıyan el yapımı yelpaze.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Şemsiye */}
+                <div className="rounded-sm border border-ink/15 bg-paper-light p-5 shadow-paper flex flex-col justify-between">
+                  <div className="relative aspect-square w-full rounded-sm overflow-hidden bg-paper-deep/10 border border-ink/5">
+                    <Image
+                      src="/mockups/semsiye.webp"
+                      alt="Onarım Şemsiyesi"
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 35vw, 80vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <h3 className="font-display text-lg font-semibold text-ink">Onarım Şemsiyesi</h3>
+                    <p className="hand-note text-sm text-[--layer-memory-repair]">Hafıza Katmanı Serisi</p>
+                    <p className="mt-2 text-sm text-ink/75 leading-relaxed">
+                      Saha araştırmalarında sizi koruyan, rüzgara dayanıklı gövdesiyle onarım renklerini taşıyan şemsiye.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Poster */}
+                <div className="rounded-sm border border-ink/15 bg-paper-light p-5 shadow-paper flex flex-col justify-between sm:col-span-2">
+                  <div className="grid gap-6 sm:grid-cols-12 items-center">
+                    <div className="relative aspect-square w-full sm:col-span-5 rounded-sm overflow-hidden bg-paper-deep/10 border border-ink/5">
+                      <Image
+                        src="/mockups/poster.webp"
+                        alt="Saha Posteri"
+                        fill
+                        sizes="(min-width: 1024px) 20vw, (min-width: 640px) 30vw, 75vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="sm:col-span-7">
+                      <h3 className="font-display text-xl font-semibold text-ink">Saha Posteri · Edisyon 01</h3>
+                      <p className="hand-note text-sm text-[--atlas-red-deep]">Arşiv Belge Serisi</p>
+                      <p className="mt-3 text-sm text-ink/75 leading-relaxed">
+                        Ankara'nın üretim kültürünü, zanaat noktalarını ve onarım rotalarını görselleştiren kalın arşiv kağıdına basılmış sınırlı üretim poster.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Çıkartmalar Alt Bölümü */}
+              <div className="border-t border-ink/10 pt-12">
+                <div className="mb-8">
+                  <p className="archive-label text-ink/40">Şehir Çıkartmaları</p>
+                  <h3 className="font-display text-2xl text-ink mt-2">Şehir & Onarım Çıkartmaları</h3>
+                  <p className="mt-2 text-sm text-ink/70">
+                    Saha izlerimizi taşıyan, şeffaf koruyucu tabakalı ve su geçirmez özel kesim çıkartma seti.
+                  </p>
+                </div>
+
+                {/* Ana Çıkartma Sayfası ve Tekli Çıkartmalar */}
+                <div className="grid gap-6 md:grid-cols-3">
+                  {/* Büyük Çıkartma Sayfası */}
+                  <div className="md:col-span-1 rounded-sm border border-ink/15 bg-paper-light p-4 shadow-paper flex flex-col justify-between items-center text-center">
+                    <div className="relative aspect-[0.92] w-full max-w-[200px] overflow-hidden">
+                      <Image
+                        src="/mockups/ek-sehir-cikartmalari.webp"
+                        alt="Ek Şehir Çıkartmaları Seti"
+                        fill
+                        sizes="(min-width: 768px) 15vw, 40vw"
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="mt-3">
+                      <h4 className="font-display font-semibold text-sm text-ink">Şehir Çıkartmaları Seti</h4>
+                      <p className="text-[0.78rem] text-ink/60 mt-1">Katmanlı Çıkartma Tabakası</p>
+                    </div>
+                  </div>
+
+                  {/* Tekli Çıkartmalar Yan Yana */}
+                  <div className="md:col-span-2 rounded-sm border border-ink/15 bg-paper-light p-4 shadow-paper flex flex-col justify-between">
+                    <div className="grid grid-cols-2 gap-4 flex-1 items-center justify-items-center">
+                      <div className="relative aspect-[1.4] w-full max-w-[150px] overflow-hidden">
+                        <Image
+                          src="/mockups/ilk-cikartma.webp"
+                          alt="Onarım Çıkartması 01"
+                          fill
+                          sizes="150px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="relative aspect-[1.4] w-full max-w-[150px] overflow-hidden">
+                        <Image
+                          src="/mockups/cikartma-1.webp"
+                          alt="Onarım Çıkartması 02"
+                          fill
+                          sizes="150px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="relative aspect-[1.4] w-full max-w-[150px] overflow-hidden">
+                        <Image
+                          src="/mockups/cikartma-2.webp"
+                          alt="Onarım Çıkartması 03"
+                          fill
+                          sizes="150px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <div className="relative aspect-[1.4] w-full max-w-[150px] overflow-hidden">
+                        <Image
+                          src="/mockups/cikartma-3.webp"
+                          alt="Onarım Çıkartması 04"
+                          fill
+                          sizes="150px"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4 border-t border-ink/10 pt-3 text-center md:text-left">
+                      <h4 className="font-display font-semibold text-sm text-ink">Özel Kesim Tekli Çıkartmalar</h4>
+                      <p className="text-[0.78rem] text-ink/60 mt-1">Dizüstü bilgisayar, defter ve kutular için zanaat motifleri.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

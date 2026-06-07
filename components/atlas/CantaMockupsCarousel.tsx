@@ -16,50 +16,50 @@ const BAGS: BagMockup[] = [
   {
     id: 6,
     src: '/mockups/canta-6.png',
-    title: 'Bez Çanta · Sarı Edisyon',
-    subtitle: 'Logo Özel Edisyon',
-    description: "Ankara'nın üretim kültüründen ilham alan bu edisyon; el emeği, ustalık ve geleneksel zanaat pratiklerini görünür kılan rotalara eşlik etmek için tasarlandı.",
-    layerColor: '#D97706', // Sarı / Altın tonu
+    title: 'Bez Çanta · Logo Edisyon',
+    subtitle: 'Ankara Onarım Atlası Genel',
+    description: "Ankara Onarım Atlası logosunu ve manifestosunu taşıyan, projenin ham pamuk dokusuyla bütünleşen genel edisyon heybe çanta.",
+    layerColor: '#CBA660', // Altın / Bej
   },
   {
     id: 5,
-    src: '/mockups/canta-2.png',
-    title: 'Bez Çanta · Kırmızı Edisyon',
-    subtitle: 'Katman 02 · Nesneyi Onaranlar',
-    description: 'Nesnelerin taşıdığı hafızadan ilham alan bu edisyon; onarım, koruma ve aktarılan bilgi etrafında şekillenen hikâyeleri temsil eder.',
-    layerColor: '#B91C1C', // Kırmızı
-  },
-  {
-    id: 2,
-    src: '/mockups/canta-3.png',
-    title: 'Bez Çanta · Kırmızı Edisyon',
-    subtitle: 'Katman 02 · Nesneyi Onaranlar',
-    description: 'Nesnelerin taşıdığı hafızadan ilham alan bu edisyon; onarım, koruma ve aktarılan bilgi etrafında şekillenen hikâyeleri temsil eder.',
-    layerColor: '#B91C1C', // Kırmızı
+    src: '/mockups/canta-5.png',
+    title: 'Bez Çanta · Yeşil Edisyon',
+    subtitle: 'Katman 05 · Hafızayı Onaranlar',
+    description: "Analog ses, plak, radyo ve kukla zanaatkarlarının hafızasını temsil eden yeşil/turkuaz renk şeritli katman edisyonu.",
+    layerColor: '#1A6B5C', // Yeşil / Turkuaz
   },
   {
     id: 4,
-    src: '/mockups/canta-5.png',
+    src: '/mockups/canta-4.png',
     title: 'Bez Çanta · Mavi Edisyon',
-    subtitle: 'Katman 03 · Hafızayı Onaranlar',
-    description: 'Görme, kaydetme ve hatırlama kavramlarından yola çıkan bu edisyon; analog kültür ve kent belleği üzerine kurulu keşif rotalarına gönderme yapar.',
+    subtitle: 'Katman 03 · Geleneksel El Sanatları',
+    description: "Halı dokuma, çini, seramik ve cam üfleme gibi geleneksel zanaatların ritmini ve mavi rengini taşıyan el sanatları edisyonu.",
     layerColor: '#1D4ED8', // Mavi
   },
   {
     id: 3,
-    src: '/mockups/canta-4.png',
-    title: 'Bez Çanta · Mavi Edisyon',
-    subtitle: 'Katman 03 · Hafızayı Onaranlar',
-    description: 'Görme, kaydetme ve hatırlama kavramlarından yola çıkan bu edisyon; analog kültür ve kent belleği üzerine kurulu keşif rotalarına gönderme yapar.',
-    layerColor: '#1D4ED8', // Mavi
+    src: '/mockups/canta-3.png',
+    title: 'Bez Çanta · Mor Edisyon',
+    subtitle: 'Katman 01 · Kağıt Sanatı',
+    description: "Mücellitlik, hat ve tezhip gibi kâğıt ve mürekkep eksenli zanaatların asaletini temsil eden mor renkli edisyon.",
+    layerColor: '#5C3B8E', // Mor
+  },
+  {
+    id: 2,
+    src: '/mockups/canta-2.png',
+    title: 'Bez Çanta · Kırmızı Edisyon',
+    subtitle: 'Katman 02 · Nesneyi Onaranlar',
+    description: "Saat, gözlük, analog kamera ve deri gibi nesnelere ikinci hayatını veren onarım ustalarının kırmızı rengini taşıyan edisyon.",
+    layerColor: '#B91C1C', // Kırmızı
   },
   {
     id: 1,
     src: '/mockups/canta-1.png',
-    title: 'Bez Çanta · Sarı Edisyon',
-    subtitle: 'Logo Özel Edisyon',
-    description: "Ankara'nın üretim kültüründen ilham alan bu edisyon; el emeği, ustalık ve geleneksel zanaat pratiklerini görünür kılan rotalara eşlik etmek için tasarlandı.",
-    layerColor: '#D97706', // Sarı / Altın tonu
+    title: 'Bez Çanta · Turuncu Edisyon',
+    subtitle: 'Katman 04 · Metal – Ahşap',
+    description: "Bıçakçı, tesbih ve ahşap oyma gibi ateşle, demirle ve talaşla çalışan metal-ahşap ustalarının sıcak turuncu rengini taşıyan edisyon.",
+    layerColor: '#B85A1C', // Turuncu
   },
 ];
 
