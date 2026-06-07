@@ -64,13 +64,13 @@ export function HeaderClient() {
       <div
         id="mobile-menu"
         className={cn(
-          'fixed inset-0 z-40 flex flex-col bg-paper px-6 py-24 transition-transform duration-300 ease-atlas',
+          'fixed inset-0 z-40 flex flex-col bg-paper px-6 py-12 sm:py-20 transition-transform duration-300 ease-atlas overflow-y-auto',
           isOpen ? 'translate-y-0' : '-translate-y-full'
         )}
       >
         {/* Navigation Links */}
-        <nav aria-label="Mobil Birincil" className="flex-1">
-          <ul className="flex flex-col gap-6 text-center">
+        <nav aria-label="Mobil Birincil" className="flex-1 mt-10">
+          <ul className="flex flex-col gap-4 sm:gap-6 text-center">
             {SITE.primaryNav.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -78,7 +78,7 @@ export function HeaderClient() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'font-display text-2xl font-semibold tracking-editorial transition-colors',
+                      'font-display text-xl sm:text-2xl font-semibold tracking-editorial transition-colors',
                       isActive ? 'text-ink' : 'text-ink/60 hover:text-ink'
                     )}
                   >
