@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { AtlasButton, AtlasIconArrow } from '@/components/ui/AtlasButton';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { DraftBadge } from '@/components/ui/DraftBadge';
 import { CantaMockupsCarousel } from '@/components/atlas/CantaMockupsCarousel';
-import { LAYERS } from '@/lib/constants/layers';
+import { BookMockup } from '@/components/atlas/BookMockup';
 import { MOCK_DISTRIBUTION } from '@/lib/constants/mockDistribution';
 import { SITE } from '@/lib/constants/site';
 
@@ -64,7 +63,7 @@ export default function AtlasEdininPage() {
         <Breadcrumb items={breadcrumb} />
       </div>
 
-      {/* Hero — şartname yanına haritalar yelpazesi */}
+      {/* Hero — şartname yanına 3D kitap */}
       <section className="mx-auto max-w-layout px-5 pb-20 pt-8 md:px-8 md:pb-28 md:pt-14">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
@@ -107,9 +106,9 @@ export default function AtlasEdininPage() {
             </div>
           </div>
 
-          {/* Sağ — harita yelpazesi */}
+          {/* Sağ — 3D Kitap Keşif Tuvali */}
           <div className="lg:col-span-7 lg:pl-16">
-            <HaritaFan />
+            <BookMockup />
           </div>
         </div>
       </section>
@@ -252,56 +251,4 @@ function Step({ n, title, body }: { n: string; title: string; body: string }) {
   );
 }
 
-function HaritaFan() {
-  return (
-    <div
-      className="relative mx-auto aspect-[5/4] w-full max-w-[640px]"
-      style={{ perspective: '1800px' }}
-    >
-      <div
-        aria-hidden
-        className="absolute inset-x-6 bottom-2 h-3 rounded-full bg-ink/10 blur-md"
-      />
-      {LAYERS.map((layer, idx) => {
-        const angle = (idx - (LAYERS.length - 1) / 2) * 7;
-        const offsetX = (idx - (LAYERS.length - 1) / 2) * 88;
-        const offsetY = Math.abs(idx - (LAYERS.length - 1) / 2) * 14;
-        return (
-          <figure
-            key={layer.slug}
-            className="absolute left-[54%] top-1/2 w-[53%] origin-bottom -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-sm border border-ink/25 shadow-sheet"
-            style={{
-              aspectRatio: '4 / 5',
-              transform: `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) rotate(${angle}deg)`,
-              zIndex: idx + 1,
-              backgroundColor: 'var(--atlas-paper-light)',
-            }}
-          >
-            <Image
-              src={layer.mapImage}
-              alt={`Harita ${layer.number}: ${layer.title}`}
-              fill
-              sizes="(min-width: 1024px) 36vw, 50vw"
-              className="object-cover"
-              loading={idx < 2 ? 'eager' : 'lazy'}
-            />
-            <span
-              aria-hidden
-              className="absolute inset-x-0 top-0 h-1"
-              style={{ backgroundColor: layer.colorHex }}
-            />
-            <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 border-t border-ink/15 bg-paper-light/95 px-3 py-2 text-[0.62rem] uppercase tracking-[0.2em] text-ink/70">
-              <span>Harita {layer.number}</span>
-              <span
-                className="hand-note text-sm normal-case tracking-normal"
-                style={{ color: layer.colorHex }}
-              >
-                {layer.shortTitle}
-              </span>
-            </figcaption>
-          </figure>
-        );
-      })}
-    </div>
-  );
-}
+
