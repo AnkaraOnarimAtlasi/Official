@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Suspense, useRef, useState } from 'react';
+import { Suspense, useRef, useState, useMemo } from 'react';
 import { OrbitControls, useTexture, Center } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -36,49 +36,43 @@ function BookMesh() {
     }
   });
 
-  // Materials for the 6 faces of the book box:
-  // 0: Right (pages)
-  // 1: Left (spine/pages - here we make it black/cream)
-  // 2: Top (pages)
-  // 3: Bottom (pages)
-  // 4: Front (front cover)
-  // 5: Back (back cover)
-  
-  // Custom materials with proper roughness/metalness for paper realism
-  const pageMat = new THREE.MeshStandardMaterial({
-    color: '#eae6da',
-    roughness: 0.9,
-    metalness: 0.05,
-  });
+  // Wrap materials in useMemo to prevent re-creation on every render frame
+  const materials = useMemo(() => {
+    const pageMat = new THREE.MeshStandardMaterial({
+      color: '#eae6da',
+      roughness: 0.9,
+      metalness: 0.05,
+    });
 
-  const spineMat = new THREE.MeshStandardMaterial({
-    color: '#242422',
-    roughness: 0.6,
-  });
+    const spineMat = new THREE.MeshStandardMaterial({
+      color: '#242422',
+      roughness: 0.6,
+    });
 
-  const frontMat = new THREE.MeshStandardMaterial({
-    map: frontTex,
-    roughness: 0.42,
-    metalness: 0.1,
-  });
+    const frontMat = new THREE.MeshStandardMaterial({
+      map: frontTex,
+      roughness: 0.42,
+      metalness: 0.1,
+    });
 
-  const backMat = new THREE.MeshStandardMaterial({
-    map: backTex,
-    roughness: 0.42,
-    metalness: 0.1,
-  });
+    const backMat = new THREE.MeshStandardMaterial({
+      map: backTex,
+      roughness: 0.42,
+      metalness: 0.1,
+    });
 
-  const materials = [
-    pageMat,   // PosX (Right edge of pages)
-    spineMat,  // NegX (Spine)
-    pageMat,   // PosY (Top edge of pages)
-    pageMat,   // NegY (Bottom edge of pages)
-    frontMat,  // PosZ (Front cover)
-    backMat,   // NegZ (Back cover)
-  ];
+    return [
+      pageMat,   // PosX (Right edge of pages)
+      spineMat,  // NegX (Spine)
+      pageMat,   // PosY (Top edge of pages)
+      pageMat,   // NegY (Bottom edge of pages)
+      frontMat,  // PosZ (Front cover)
+      backMat,   // NegZ (Back cover)
+    ];
+  }, [frontTex, backTex]);
 
   // Based on PDF dimensions: Rect(0, 0, 742, 532) -> aspect ratio is ~1.39
-  // We use Width = 4.2, Height = 3.0, Thickness = 0.18
+  // We use Width = 4.17, Height = 3.0, Thickness = 0.18
   return (
     <mesh
       ref={meshRef}
@@ -95,60 +89,62 @@ function BookMesh() {
 
 export default function BookCanvas() {
   return (
-    <div className="relative w-full aspect-[4/3] rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none cursor-grab active:cursor-grabbing">
-      {/* Texture loading fallback */}
-      <Suspense
-        fallback={
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-paper-light">
-            <span className="archive-label text-ink/35 animate-pulse">3D Model Yükleniyor...</span>
-          </div>
-        }
-      >
-        <Canvas
-          shadows
-          camera={{ position: [0, 0, 5.2], fov: 45 }}
-          className="w-full h-full bg-[#ebdcb7]/20"
+    <div className="relative w-full pb-[75%] h-0 rounded-sm border border-ink/15 bg-paper shadow-sheet overflow-hidden select-none cursor-grab active:cursor-grabbing">
+      <div className="absolute inset-0 w-full h-full">
+        {/* Texture loading fallback */}
+        <Suspense
+          fallback={
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-paper-light">
+              <span className="archive-label text-ink/35 animate-pulse">3D Model Yükleniyor...</span>
+            </div>
+          }
         >
-          {/* Studio lighting setup */}
-          <ambientLight intensity={1.1} />
-          
-          <directionalLight
-            position={[4, 6, 5]}
-            intensity={1.6}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-bias={-0.0005}
-          />
-          
-          <directionalLight
-            position={[-4, 3, -4]}
-            intensity={0.6}
-          />
+          <Canvas
+            shadows
+            camera={{ position: [0, 0, 5.2], fov: 45 }}
+            className="w-full h-full bg-[#ebdcb7]/20"
+          >
+            {/* Studio lighting setup */}
+            <ambientLight intensity={1.1} />
+            
+            <directionalLight
+              position={[4, 6, 5]}
+              intensity={1.6}
+              castShadow
+              shadow-mapSize-width={1024}
+              shadow-mapSize-height={1024}
+              shadow-bias={-0.0005}
+            />
+            
+            <directionalLight
+              position={[-4, 3, -4]}
+              intensity={0.6}
+            />
 
-          <Center>
-            <BookMesh />
-          </Center>
+            <Center>
+              <BookMesh />
+            </Center>
 
-          {/* User manual rotation control - enableZoom is false to allow page scroll */}
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            minPolarAngle={Math.PI / 4}
-            maxPolarAngle={Math.PI * 3 / 4}
-            makeDefault
-          />
-        </Canvas>
-      </Suspense>
+            {/* User manual rotation control - enableZoom is false to allow page scroll */}
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              minPolarAngle={Math.PI / 4}
+              maxPolarAngle={Math.PI * 3 / 4}
+              makeDefault
+            />
+          </Canvas>
+        </Suspense>
 
-      {/* 3D interaction guide tag */}
-      <div className="absolute bottom-3 right-3 pointer-events-none z-10">
-        <span className="inline-flex items-center gap-1.5 rounded-sm bg-paper-light/90 px-2 py-1 text-[0.58rem] uppercase tracking-[0.16em] text-ink/65 backdrop-blur-[1px] border border-ink/10">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3 w-3 animate-bounce">
-            <path d="M8 2v12M5 11l3 3 3-3" />
-          </svg>
-          Çevirerek Keşfet
-        </span>
+        {/* 3D interaction guide tag */}
+        <div className="absolute bottom-3 right-3 pointer-events-none z-10">
+          <span className="inline-flex items-center gap-1.5 rounded-sm bg-paper-light/90 px-2 py-1 text-[0.58rem] uppercase tracking-[0.16em] text-ink/65 backdrop-blur-[1px] border border-ink/10">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-3 w-3 animate-bounce">
+              <path d="M8 2v12M5 11l3 3 3-3" />
+            </svg>
+            Çevirerek Keşfet
+          </span>
+        </div>
       </div>
     </div>
   );
